@@ -1,0 +1,400 @@
+/* Ensure the body takes full height */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: none; /* Remove background from body */
+}
+
+.background-container {
+  width: 100%;
+  height: 100vh;
+  background: url('../image/login-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Blurred overlay for background */
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+/* Login container */
+.login-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  background-color: transparent;
+}
+
+/* Box containing both the image and form */
+.shadow-box {
+  display: flex;
+  width: 800px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Shadow remains here */
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  max-height: 90vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Image container */
+.image-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Ensure the image scales properly */
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Login card (removing shadow effect) */
+.login-card {
+  width: 50%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(230, 213, 213, 0.034); /* Transparent background */
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 2;
+  box-shadow: none; /* Remove shadow */
+}
+
+/* Login card title */
+.login-card h2 {
+  font-weight: bold;
+}
+
+/* Form controls */
+.login-card .form-control {
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Button styling */
+.login-card button {
+  border-radius: 5px;
+}
+
+/* Footer Styling */
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  position: relative;
+  bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-height: 600px) {
+  .login-container {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .shadow-box {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .image-container {
+    width: 100%;
+    display: none;
+  }
+
+  .login-card {
+    width: 100%;
+  }
+}
+
+/* Ensure the body takes full height
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+ 
+  background: url('../image/login-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit; 
+  filter: blur(10px); 
+  z-index: -1; 
+}
+
+
+.login-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative; /
+  background-color: #ffffff00;
+}
+
+
+.shadow-box {
+  display: flex;
+  width: 800px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.3); 
+  backdrop-filter: blur(15px); 
+  max-height: 90vh;
+  position: relative; 
+  z-index: 1;
+}
+
+
+.image-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.login-card {
+  width: 50%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(230, 213, 213, 0.034); 
+  backdrop-filter: blur(10px); 
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 2; 
+}
+
+
+.login-card h2 {
+  font-weight: bold;
+}
+
+
+.login-card .form-control {
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.7); 
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+.login-card button {
+  border-radius: 5px;
+}
+
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  position: relative;
+  bottom: 0;
+}
+
+
+@media (max-height: 600px) {
+  .login-container {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .shadow-box {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .image-container {
+    width: 100%;
+    display: none;
+  }
+
+  .login-card {
+    width: 100%;
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: url('../image/login-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+.login-container {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.shadow-box {
+  display: flex;
+  width: 800px; 
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background: white;
+  max-height: 90vh;
+}
+
+.image-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 10px;
+}
+
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.login-card {
+  width: 50%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-card h2 {
+  font-weight: bold;
+}
+
+
+.login-card .form-control {
+  margin-bottom: 15px;
+}
+
+
+.login-card button {
+  border-radius: 5px;
+}
+
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  position: relative;
+  bottom: 0;
+}
+
+
+@media (max-height: 600px) {
+  .login-container {
+    align-items: flex-start; 
+  }
+}
+
+@media (max-width: 768px) {
+  .shadow-box {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .image-container {
+    width: 100%;
+    display: none; 
+  }
+
+  .login-card {
+    width: 100%;
+  }
+}
+ */

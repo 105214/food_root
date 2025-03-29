@@ -1,0 +1,245 @@
+/* Reset basic elements */
+/* body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+} */
+
+/* Make root container flex */
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* New parent div with background */
+.page-background {
+    background-image: url('../image/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Content expands to push footer */
+.content {
+    flex: 1;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+/* Container styling */
+.restaurant-container {
+    max-width: 800px;
+    margin: 100px auto!important;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.add-restaurant {
+    width: 130px!important;
+}
+.restaurant-container h2 {
+    color: #28a745;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Input styling */
+.restaurant-form .form-group {
+    margin-bottom: 20px;
+}
+
+.restaurant-form .form-control {
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restaurant-form .form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.restaurant-form .form-label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+.add-restaurant {
+    width: 200px;
+}
+
+/* Image preview */
+.image-preview {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.preview-img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    border: 2px solid #28a745;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.preview-img:hover {
+    transform: scale(1.05);
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Footer */
+.footer-box {
+    width: 100%;
+    background-color: #28a745;
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .restaurant-container {
+        margin: 30px auto;
+        padding: 20px;
+    }
+    
+    .content {
+        margin-top: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ensure full height for body and root
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.add-restaurant-container {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .img-preview {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+
+.content {
+    flex: 1;
+    margin-top: 300px;
+}
+
+
+.restaurant-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.restaurant-form .form-group {
+    margin-bottom: 15px;
+}
+
+
+.image-preview {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.preview-img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
+
+
+.submit-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.footer-box {
+    width: 100%;
+    background-color: #28a745;
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+} */

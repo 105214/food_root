@@ -1,0 +1,137 @@
+/* 🌟 Background for the whole page */
+body {
+    background: linear-gradient(to right, #a3b189, #90c071); /* Soft pink & orange */
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🌟 Centering the form with a card effect */
+.dish-container {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 🌟 Form Styles */
+.dish-form {
+    padding: 20px;
+}
+
+/* 🌟 Input Fields */
+.form-control {
+    border: 2px solid #f8a488;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 8px rgba(255, 111, 97, 0.5);
+}
+
+/* 🌟 Labels */
+.form-label {
+    font-weight: 600;
+    color: #333;
+}
+
+/* 🌟 Select Dropdown */
+.form-select {
+    border: 2px solid #f8a488;
+    border-radius: 8px;
+}
+
+/* 🌟 Checkbox */
+.form-check-label {
+    font-weight: 500;
+    color: #555;
+}
+
+/* 🌟 Submit Button */
+.submit-btn {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #ff6f61;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: #e65a50;
+    transform: scale(1.05);
+}
+
+/* 🌟 Image Preview */
+.image-preview {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.preview-img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.preview-img:hover {
+    transform: scale(1.1);
+}
+
+/* 🌟 Heading */
+h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+
+
+
+
+
+
+
+
+/* .dish-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dish-form {
+    padding: 20px;
+}
+
+.image-preview {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.preview-img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 20px;
+} */

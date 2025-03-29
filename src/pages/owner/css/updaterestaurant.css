@@ -1,0 +1,216 @@
+/* Main container styling with background image */
+body {
+  background-image: url('../image/bg2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.update-restaurant-container {
+  max-width: 700px;
+  margin: 100px auto!important;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Form header styling */
+.update-restaurant-container h2 {
+  color: #2c3e50;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 15px;
+}
+
+/* Form styling */
+.update-restaurant-form {
+  padding: 10px;
+}
+
+.update-restaurant-form .form-label {
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.update-restaurant-form .form-control {
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.update-restaurant-form .form-control:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+  background-color: #fff;
+}
+
+/* Input fields hover effect */
+.update-restaurant-form .form-control:hover {
+  background-color: #fff;
+}
+
+/* Textarea specific styling */
+.update-restaurant-form textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Image preview styling */
+.img-thumbnail {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.img-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+/* File input styling */
+input[type="file"].form-control {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.form-text {
+  color: #7f8c8d;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* Button styling */
+.update-restaurant-form .btn-primary {
+  background-color: #3498db;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.update-restaurant-form .btn-primary:hover {
+  background-color: #2980b9;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.update-restaurant-form .btn-primary:active {
+  transform: translateY(-1px);
+}
+
+.update-restaurant-form .btn-primary:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading indicator */
+.alert-info {
+  background-color: rgba(52, 152, 219, 0.2);
+  border-color: #3498db;
+  color: #2c3e50;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .update-restaurant-container {
+    max-width: 95%;
+    margin: 30px auto;
+    padding: 20px;
+  }
+  
+  .update-restaurant-form .form-control {
+    padding: 10px;
+  }
+  
+  .update-restaurant-container h2 {
+    font-size: 24px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+  .update-restaurant-container {
+    padding: 15px;
+  }
+  
+  .update-restaurant-form {
+    padding: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .update-restaurant-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .update-restaurant-form .form-label {
+    font-weight: bold;
+  }
+  
+  .update-restaurant-form .form-control {
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .update-restaurant-form .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .update-restaurant-form .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .update-restaurant-container {
+      max-width: 90%;
+    }
+  }
+   */
+  

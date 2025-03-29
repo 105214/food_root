@@ -1,0 +1,18 @@
+/* admin-layout.css */
+.admin-layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .admin-content {
+    flex: 1 0 auto;
+    padding-bottom: 30px; /* Add some space before footer */
+  }
+  
+  /* Ensure these are applied globally */
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }

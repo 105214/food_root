@@ -1,0 +1,28 @@
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Important: ensures minimum height is full viewport */
+  }
+  
+  .owner-dishes-container {
+    flex: 1 0 auto; /* This will make the container take up all available space */
+  }
+  
+  footer {
+    flex-shrink: 0; /* Prevents the footer from shrinking */
+    background-color: #28a745;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; /* Pushes footer to bottom */
+  }
+  .footer-box{
+margin-top:100px;
+  }

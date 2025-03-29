@@ -1,0 +1,25 @@
+.cart-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .dish-card {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .dish-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .dish-image {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 768px) {
+    .dish-card {
+      text-align: center;
+    }
+  }
+  

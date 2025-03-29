@@ -1,0 +1,29 @@
+.logout-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff00!important;
+  }
+  
+  .logout-card {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff00;
+    text-align: center;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #dc3545;
+  }
+  
+  button {
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .alert {
+    text-align: center;
+  }

@@ -1,0 +1,50 @@
+/* For the footer to stick to the bottom */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply this to your main layout wrapper */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Apply this to your main content container */
+.content-container {
+  flex: 1 0 auto;
+}
+
+/* Footer styling */
+footer {
+  flex-shrink: 0;
+  background-color: #28a745;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Additional styles for footer content */
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer .social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+footer .social-icons a {
+  color: white;
+  font-size: 18px;
+}

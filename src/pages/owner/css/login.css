@@ -1,0 +1,264 @@
+/* Full-page background */
+.login-page {
+  background: url("../image/bg2.jpg") no-repeat center center/cover;
+  min-height: 100vh; /* Ensures full height */
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents extra space */
+}
+
+/* Centered Login Box */
+.login-box {
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Title */
+h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Button */
+button {
+  font-size: 18px;
+  padding: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-box {
+    width: 90%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Full-page background
+.login-page {
+  background: url("../image/bg1.jpg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.login-box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+
+h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+button {
+  font-size: 18px;
+  padding: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .login-box {
+    width: 90%;
+  }
+} */
+
+/* .login-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+button {
+  font-size: 18px;
+}
+ */
+
+
+
+
+
+
+/* Reset default margins and padding
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+
+.parent-box {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.login-main-image-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(200,200,200,.4), rgba(200,200,200,.4)), 
+                    url('./images/pexels-janetrangdoan-1092730.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px);
+  z-index: -1; 
+}
+
+
+.form-box {
+  width: 90%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.input-image-box {
+  background-image: url("./images/wmremove-transformed.webp");
+  height: 600px;
+  width: 450px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+
+.input-box-text {
+  height: 600px;
+  width: 450px;
+  padding: 20px;
+}
+
+
+form {
+  padding-top: 20px;
+}
+.mb-3.email-box, .mb-3.password-box {
+  width: 100%;
+  max-width: 300px;
+}
+
+
+.login-button {
+  width: 100%;
+  max-width: 200px;
+}
+
+
+@media (max-width: 768px) {
+  .form-box {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      width: 95%;
+  }
+
+  .input-image-box {
+      width: 100%;
+      height: 300px;
+  }
+
+  .input-box-text {
+      width: 100%;
+      height: auto;
+  }
+
+  .mb-3.email-box, .mb-3.password-box {
+      width: 90%;
+  }
+
+  .login-button {
+      width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-image-box {
+      display: none; 
+  }
+
+  .input-box-text {
+      width: 100%;
+  }
+}
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  */

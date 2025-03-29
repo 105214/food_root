@@ -1,0 +1,228 @@
+/* UserHome.css */
+
+/* Carousel Styles */
+.carousel-container {
+    margin-bottom: 20px;
+  }
+  
+  .carousel-container img {
+    max-height: 500px;
+    object-fit: cover;
+  }
+  
+  /* Navigation Cards */
+  .nav-card {
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: none;
+  }
+  
+  .nav-card:hover {
+    transform: scale(1.05);
+  }
+  .carousel-caption h3{
+color:#000;
+  }
+  .carousel-caption p{
+    color:#000;
+      }
+  /* Reviews Section */
+  .review-carousel {
+    margin-top: 20px;
+  }
+  .restaurant{
+    width:110px
+  }
+  .dish{
+    width:80px;
+  }
+  .review-card {
+    text-align: center;
+    padding: 20px;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .carousel-container img {
+      max-height: 300px;
+    }
+  
+    .review-img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* UserHome.css
+
+
+.carousel-container {
+    margin-bottom: 20px;
+  }
+  
+  .carousel-container img {
+    max-height: 500px;
+    object-fit: cover;
+  }
+  
+
+  .dish-card {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .dish-card:hover {
+    transform: scale(1.05);
+  }
+  
+
+  .review-carousel {
+    margin-top: 20px;
+  }
+  
+  .review-card {
+    text-align: center;
+    padding: 20px;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .carousel-container img {
+      max-height: 300px;
+    }
+  
+    .review-img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+   */
+  
+  
+
+
+
+
+
+
+
+
+
+
+/* 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.hero-section {
+    background: url("./image/pexels-ella-olsson-572949-1640777.jpg") no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: left;
+    padding: 50px;
+}
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+.hero-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.hero-image {
+    width: 100%;
+    max-height: 400px;
+}
+
+
+.categories-section {
+    padding: 60px 0;
+    text-align: center;
+}
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.category-card {
+    cursor: pointer;
+    transition: 0.3s;
+}
+.category-card:hover {
+    transform: scale(1.05);
+}
+
+
+.popular-dishes {
+    padding: 60px 0;
+}
+.dish-card {
+    text-align: center;
+    transition: 0.3s;
+}
+.dish-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.testimonials {
+    background: #f8f9fa;
+    padding: 60px 0;
+    text-align: center;
+}
+.testimonial-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+}
+.testimonial-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+} */
+
+

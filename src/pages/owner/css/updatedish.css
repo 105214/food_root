@@ -1,0 +1,31 @@
+.update-dish-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  button {
+    font-size: 16px;
+  }
+  
+
+  .update-dish-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

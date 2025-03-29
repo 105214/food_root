@@ -1,0 +1,17 @@
+.order-card {
+    background: #fff;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  .order-card:hover {
+    transform: scale(1.02);
+  }
+  .status {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 5px;
+  }
+  .status.pending { background: orange; color: white; }
+  .status.delivered { background: green; color: white; }
+  .status.cancelled { background: red; color: white; }
+  

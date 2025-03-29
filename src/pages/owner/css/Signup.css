@@ -1,0 +1,241 @@
+*{
+   margin:0px;
+   padding:0px;
+   box-sizing: border-box ;
+
+}
+
+.signup-background {
+    background: url("../image/bg1.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+  
+  .signup-container {
+    z-index: 1;
+    position: relative;
+  }
+  
+  .signup-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* If you want to add a semi-transparent overlay */
+  .signup-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust opacity as needed */
+    z-index: 0;
+  }
+.user-signup-main-box{
+    background:url("./images/pexels-ella-olsson-572949-1640777.jpg");
+    background-size:cover;
+    background-position:center;
+    height: 100vh;
+    filter:blur(8px);
+    position:relative;
+}
+
+.user-signup-sub-box{
+    height: 600px;
+    width: 900px;
+    border:1px solid #805c5cb6;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display:flex;
+}
+.user-signup-image{
+    width:450px;
+    height:600px;
+    background:url('./images/Online_Shoping_29.jpg');
+    background-size:cover;
+    background-position: center;
+    border-radius: 5px;
+}
+.signup-input-box{
+    width:450px;
+    height:600px;
+    display: flex;
+    justify-content: center;
+    
+}
+#formBasicName {
+    width: 200px;
+}
+#formMobile {
+    width: 200px;
+}
+#formBasicEmail {
+    width: 200px;
+}
+#formBasicPassword {
+    width: 200px;
+}
+#formBasicProfilePic{
+    width: 200px;
+}
+.signup-button{
+    width: 150px;
+}
+
+
+@media(max-width:250px){
+    .user-signup-image{
+        display: none;
+    }
+    .user-signup-main-box{
+        width: 575px;
+        height: 1400px;
+    }
+    .user-signup-sub-box{
+        width:400px;
+        margin-left:200px;
+        margin-top: 200px;
+    }
+    .signup-input-box{
+        width:450px;
+        height:600px;
+        display: flex;
+      
+        justify-content :center;
+       
+    }
+}
+
+@media(min-width:250px){
+    .user-signup-image{
+        display: none;
+    }
+    .user-signup-main-box{
+        width: 575px;
+        height: 1400px;
+    }
+    .user-signup-sub-box{
+        width:400px;
+        margin-left:200px;
+        margin-top: 200px;
+    }
+    .signup-input-box{
+        width:450px;
+        height:600px;
+        display: flex;
+      
+        justify-content :center;
+       
+    }
+}
+
+@media(min-width:340px){
+    .user-signup-sub-box{
+        width:400px;
+        margin-left:100px;
+        margin-top: 200px;
+    }
+}
+
+@media(min-width:400px){
+    .user-signup-sub-box{
+        width:400px;
+        margin-left:50px;
+        margin-top: 200px;
+    }
+}
+
+@media(min-width:590px){
+
+    .user-signup-image{
+        /* width:450px;
+        height:600px;
+        background:url('./Online_Shoping_29.jpg');
+        background-size:cover;
+        background-position: center;
+        border-radius: 5px; */
+        display:flex
+    }
+
+    .user-signup-main-box{
+        width: 800px;
+        height: 908px;
+    }
+    .user-signup-sub-box{
+        width: 698px;
+        margin-top: 200px;
+        margin-left: -43px;
+    }
+}
+
+@media(min-width:740px){
+    .user-signup-main-box{
+        
+        height:1200px;
+        width: 1400px;
+    }
+    .user-signup-sub-box{
+        height: 600px;
+        width: 900px;
+        border:1px solid #805c5cb6;
+        position:absolute;
+        top: 50%;
+        left: 95%;
+        transform: translate(-50%, -50%);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media(min-width:900px){
+    .user-signup-main-box{
+        
+        height:1200px;
+        width: 1400px;
+    }
+    .user-signup-sub-box{
+        height: 600px;
+        width: 900px;
+        border:1px solid #805c5cb6;
+        position:absolute;
+        top: 50%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media(min-width:1200px){
+    .user-signup-main-box{
+        
+        height:1000px;
+        width: 1400px;
+    }
+    .user-signup-sub-box{
+        height: 600px;
+        width: 900px;
+        border:1px solid #805c5cb6;
+        position:absolute;
+        top: 50%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

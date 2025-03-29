@@ -1,0 +1,42 @@
+.orders-container {
+    max-width: 95%;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .orders-table {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orders-table th {
+    background: #007bff;
+    color: white;
+    text-align: center;
+  }
+  
+  .orders-table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .order-items {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .order-items li {
+    font-size: 14px;
+  }
+  
+  @media (max-width: 768px) {
+    .orders-table {
+      font-size: 14px;
+    }
+  
+    .order-items li {
+      font-size: 12px;
+    }
+  }
+  

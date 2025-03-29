@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.custom-navbar {
+  background-color: #40ec88 !important;
+  height: 60px;
+  padding: 0 15px;
+}
+
+.brand-logo {
+  font-family: "Pacifico", serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 30px;
+  color: #000;
+}
+
+.nav-link {
+  color: #000 !important;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+}
+.search-form {
+  display: flex;
+  align-items: center;
+}
+.search-form input {
+  width: 200px;
+  max-width: 100%;
+}
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .custom-navbar {
+    height: auto;
+  }
+  
+  .navbar-collapse {
+    background-color: #40ec88;
+    padding: 15px;
+    margin-top: 10px;
+  }
+  
+  .nav-link {
+    padding: 10px 0;
+  }
+}

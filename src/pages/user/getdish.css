@@ -1,0 +1,20 @@
+.dish-details-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #ffffff00!important;
+}
+
+.dish-card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.dish-card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.loading-spinner {
+    display: block;
+    margin: 50px auto;
+}

@@ -1,0 +1,11 @@
+.table-responsive {
+    overflow-x: auto;
+  }
+  
+  h2 {
+    font-weight: bold;
+    color: #007bff;
+  }
+.deletebutton{
+    width:100px;
+}  

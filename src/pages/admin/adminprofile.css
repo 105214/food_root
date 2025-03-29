@@ -1,0 +1,36 @@
+.admin-profile-container {
+    max-width: 1200px;
+    margin-top: 30px;
+  }
+  
+  .profile-card {
+    padding: 20px;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .profile-placeholder {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    .admin-profile-container {
+      padding: 15px;
+    }
+  
+    .profile-image {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  

@@ -1,0 +1,220 @@
+/* Add this to your CSS file */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main, .owner-dishes-container {
+  flex: 1;
+}
+
+footer {
+  background-color: #28a745; /* The green color from your image */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto; /* This pushes the footer to the bottom */
+}
+
+/* Your existing footer social media icons styling */
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.owner-dishes-container {
+  flex: 1;
+}
+
+footer {
+  background-color: #28a745;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+
+
+
+
+
+
+
+
+
+/* Adjust the card width */
+.dish-card {
+  border: 1px solid #eee;
+  margin:100px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 100%; /* Make cards take full width of their container */
+  display: flex; /* Change to horizontal layout */
+  flex-direction: row; /* Ensure horizontal arrangement */
+}
+
+/* Adjust the image size for horizontal layout */
+.dish-image,
+.default-image-placeholder {
+  width: 200px; /* Fixed width for the image */
+  height: 200px;
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* Create a container for the text content */
+.dish-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1; /* Allow content to take available space */
+}
+
+/* Adjust button positioning */
+.view-button {
+  align-self: flex-start; /* Align button to the left */
+  margin-top: 1rem;
+}
+
+/* For responsive design */
+@media (max-width: 768px) {
+  .dish-card {
+    flex-direction: column; /* Stack on mobile */
+  }
+  
+  .dish-image,
+  .default-image-placeholder {
+    width: 100%; /* Full width on mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* OwnerDishes.css
+
+.owner-dishes-container {
+    min-height: 80vh;
+    padding: 20px;
+  }
+  
+  .owner-dishes-title {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+    
+
+  .no-dishes-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin: 2rem 0;
+    padding: 2rem;
+  }
+  
+  .dish-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .dish-image {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .default-image-placeholder {
+    height: 200px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-style: italic;
+  }
+  
+  .dish-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .dish-price {
+    font-weight: 700;
+    color: #28a745;
+    font-size: 1.1rem;
+  }
+  
+  .dish-description {
+    color: #666;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 4.5rem;
+  }
+  
+  .dish-category {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .category-badge {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: inline-block;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .owner-dishes-title {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .owner-dishes-container {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  } */
