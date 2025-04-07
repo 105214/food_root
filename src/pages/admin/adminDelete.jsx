@@ -4,6 +4,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./admindelete.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
 
 const AdminDelete = () => {
   const navigate=useNavigate()
@@ -23,7 +27,7 @@ const AdminDelete = () => {
       }
   
       try {
-        const response = await axios.get("http://localhost:3001/api/admin/adminprofile", {
+        const response = await axios.get(`${backendurl}/admin/adminprofile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log("Fetched Admin Data:", response.data)
@@ -52,7 +56,7 @@ const AdminDelete = () => {
     }
   
     try {
-      await axios.delete("http://localhost:3001/api/admin/deleteadmin", {
+      await axios.delete(`${backendurl}/admin/deleteadmin`, {
         headers: { Authorization: `Bearer ${token}` }, // Include the token
         data: { _id: admin._id },
       });

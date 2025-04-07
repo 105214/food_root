@@ -3,6 +3,7 @@ import { Container, Card, Form, Button, Alert, Spinner } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./css/adminupdate.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
 
 const AdminUpdate = () => {
   const [formData, setFormData] = useState({ name: "", email: "", mobile: "", profilePic: null });
@@ -21,7 +22,7 @@ const AdminUpdate = () => {
           return;
         }
         
-        const response = await axios.get("http://localhost:3001/api/admin/adminprofile", {
+        const response = await axios.get(`${backendurl}/admin/adminprofile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         
@@ -63,7 +64,7 @@ const AdminUpdate = () => {
         console.log(pair[0] + ': ' + pair[1]);
       }
       
-      const response = await axios.put("http://localhost:3001/api/admin/updateadmin", formDataToSend, {
+      const response = await axios.put(`${backendurl}/admin/updateadmin`, formDataToSend, {
         headers: { Authorization: `Bearer ${token}`,
         "Content-Type": "multipart/form-data",
       },

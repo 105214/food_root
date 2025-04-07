@@ -3,6 +3,11 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Container, Form, Button, Alert, Spinner } from "react-bootstrap";
 import './css/updatedish.css';
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
+
 
 const UpdateDish = () => {
     const { id } = useParams(); // Get dishId from URL
@@ -23,7 +28,7 @@ const UpdateDish = () => {
             try {
                 setLoading(true);
                 const token = localStorage.getItem("token");
-                const response = await axios.get(`http://localhost:3001/api/dish/getdish/${id}`, {
+                const response = await axios.get(`${backendurl}/dish/getdish/${id}`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 
@@ -101,7 +106,7 @@ const UpdateDish = () => {
           
           // Add timeout and increase it
           const response = await axios.put(
-            `http://localhost:3001/api/dish/updatedish/${id}`,
+            `${backendurl}/dish/updatedish/${id}`,
             formData,
             { 
               headers: { 

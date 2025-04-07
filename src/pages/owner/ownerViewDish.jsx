@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './css/ownerdishdetails.css'; // Import the CSS file
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
+
+
+
+
+
 
 const OwnerDishDetails = () => {
   const [dish, setDish] = useState(null);
@@ -13,7 +22,7 @@ const OwnerDishDetails = () => {
   useEffect(() => {
     const fetchDishDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/api/dish/viewdish/${id}`, {
+        const response = await axios.get(`${backendurl}/dish/viewdish/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}` // Assuming JWT auth
           }
@@ -41,7 +50,7 @@ const OwnerDishDetails = () => {
         return;
       }
   
-      await axios.delete(`http://localhost:3001/api/dish/deletedish/${id}`, {
+      await axios.delete(`${backendurl}/dish/deletedish/${id}`, {
         headers: { 
           Authorization: `Bearer ${token}` 
         },

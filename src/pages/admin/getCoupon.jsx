@@ -4,6 +4,16 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
 import './getcoupon.css';
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
+
+
+
+
+
+
 
 const CouponPage = () => {
   const navigate = useNavigate();
@@ -27,7 +37,7 @@ const CouponPage = () => {
         return;
       }
      
-      const response = await axios.get('http://localhost:3001/api/coupon/getallcoupon', {
+      const response = await axios.get(`${backendurl}/coupon/getallcoupon`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -61,7 +71,7 @@ const CouponPage = () => {
         return;
       }
 
-      await axios.delete(`http://localhost:3001/api/coupon/deletecoupon/${couponToDelete._id}`, {
+      await axios.delete(`${backendurl}/coupon/deletecoupon/${couponToDelete._id}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -191,158 +201,3 @@ const CouponPage = () => {
 
 export default CouponPage;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import { Container, Table, Alert, Spinner, Card, Button } from 'react-bootstrap';
-// import axios from 'axios';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import { useNavigate } from "react-router-dom";
-// import './getcoupon.css';
-
-// const CouponPage = () => {
-//   const navigate = useNavigate();
-//   const [coupons, setCoupons] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     const fetchCoupons = async () => {
-//       try {
-//         const token = localStorage.getItem('token');
-//         console.log('Retrieved Token:', token); // Debugging
-        
-//         if (!token) {
-          
-//           navigate("/adminlogin");
-//         }
-       
-//         const response = await axios.get('http://localhost:3001/api/coupon/getallcoupon', {
-//           headers: {
-//             'Authorization': `Bearer ${token}`,
-//             'Content-Type': 'application/json'
-//           }
-//         });
-//         console.log(localStorage.getItem('adminToken'));
-//         console.log(localStorage.getItem('token'));
-        
-//         console.log('Coupons Response:', response.data);
-//         setCoupons(response.data.coupons || []);
-//       } catch (err) {
-//         console.error('Fetch Error:', err);
-//         setError(err.response?.data?.message || err.message || 'Failed to fetch coupons');
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-    
-    
-
-
-
-//     fetchCoupons();
-//   }, []);
-
-//   const renderCouponTable = () => {
-//     return (
-//       <Table striped bordered hover responsive className="coupon-table">
-//         <thead>
-//           <tr>
-//             <th>Coupon Code</th>
-//             <th>Discount (%)</th>
-//             <th>Expiry Date</th>
-//             <th>Status</th>
-//             <th>Actions</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {coupons.map((coupon) => (
-//             <tr key={coupon._id}>
-//               <td>{coupon.code}</td>
-//               <td>{coupon.discount}%</td>
-//               <td>{coupon.expiryDate ? new Date(coupon.expiryDate).toLocaleDateString() : 'N/A'}</td>
-//               <td>
-//                 <span className={`badge ${coupon.isActive ? 'bg-success' : 'bg-danger'}`}>
-//                   {coupon.isActive ? 'Active' : 'Inactive'}
-//                 </span>
-//               </td>
-//               <td>
-//                 <Button variant="primary" size="sm" className="me-2">
-//                   Edit
-//                 </Button>
-//                 <Button variant="danger" size="sm">
-//                   Delete
-//                 </Button>
-//               </td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </Table>
-//     );
-//   };
-
-//   // Detailed loading and error states
-//   if (loading) {
-//     return (
-//       <Container className="text-center mt-5">
-//         <Spinner animation="border" role="status">
-//           <span className="visually-hidden">Loading...</span>
-//         </Spinner>
-//         <p>Attempting to fetch coupons...</p>
-//       </Container>
-//     );
-//   }
-
-//   if (error) {
-//     return (
-//       <Container>
-//         <Alert variant="danger">
-//           <strong>Error:</strong> {error}
-//           <p>Please check your connection and authentication.</p>
-//         </Alert>
-//       </Container>
-//     );
-//   }
-
-//   return (
-//     <Container className="coupon-management-page">
-//       <Card className="mt-4">
-//         <Card.Header>
-//           <h2 className="text-center">Coupon Management</h2>
-//         </Card.Header>
-//         <Card.Body>
-//           <Button variant="success" className="mb-3">
-//             Create New Coupon
-//           </Button>
-//           {coupons.length === 0 ? (
-//             <Alert variant="info">No coupons found</Alert>
-//           ) : (
-//             renderCouponTable()
-//           )}
-//         </Card.Body>
-//       </Card>
-//     </Container>
-//   );
-// };
-
-// export default CouponPage;

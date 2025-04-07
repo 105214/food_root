@@ -3,6 +3,14 @@ import { Container, Row, Col, Card, Image, Spinner, Alert, Button } from "react-
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./userprofile.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
+
+
+
+
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
@@ -26,7 +34,7 @@ const UserProfile = () => {
     console.log("Token:", token); // Debugging
   
     try {
-      const response = await axios.get("http://localhost:3001/api/user/profile", {
+      const response = await axios.get(`${backendurl}/user/profile`, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });

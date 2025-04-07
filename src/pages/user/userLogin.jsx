@@ -6,6 +6,11 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import loginImage from "./image/login-side.webp";
 import "./css/userlogin.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
+
 
 const UserLogin = () => {
   const navigate=useNavigate()
@@ -27,7 +32,7 @@ const handleSubmit = async (e) => {
   setMessage(null);
 
   try {
-    const response = await axios.put("http://localhost:3001/api/user/login", formData);
+    const response = await axios.put(`${backendurl}/user/login`, formData);
     
     // Validate token before storing
     if (response.data.token) {

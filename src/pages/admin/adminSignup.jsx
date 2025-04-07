@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Form, Button, Alert, Container, Card } from "react-bootstrap";
 import "./css/adminsignup.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
 
 const AdminSignup = () => {
   const [formData, setFormData] = useState({
@@ -37,7 +38,7 @@ const AdminSignup = () => {
   formDataToSend.append("profilePic", formData.image);
   }
     try {
-      const response = await axios.post("http://localhost:3001/api/admin/addadmin", formDataToSend,
+      const response = await axios.post(`${backendurl}/admin/addadmin`, formDataToSend,
         {
             headers: {
             'Content-Type': 'multipart/form-data',

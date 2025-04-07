@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Container, Row, Col, Card, Spinner, Alert, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './css/ownerDishes.css';
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
 
 const OwnerDishes = () => {
   const [dishes, setDishes] = useState([]);
@@ -20,7 +22,7 @@ const OwnerDishes = () => {
       const token = localStorage.getItem('token');
       console.log('Using token:', token ? 'Token exists' : 'No token');
       
-      const response = await axios.get('http://localhost:3001/api/dish/dishes', {
+      const response = await axios.get(`${backendurl}/dish/dishes`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

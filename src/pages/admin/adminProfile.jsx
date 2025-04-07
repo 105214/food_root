@@ -3,6 +3,8 @@ import { Container, Card, Row, Col, Image, Button, Alert, Spinner } from "react-
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./adminprofile.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
 
 const AdminProfile = () => {
   const [adminData, setAdminData] = useState(null);
@@ -31,7 +33,7 @@ const AdminProfile = () => {
               Authorization: `Bearer ${token}`
             }); // Check headers
       
-            const response = await axios.get("http://localhost:3001/api/admin/adminprofile", {
+            const response = await axios.get(`${backendurl}/admin/adminprofile`, {
               headers: {
                 Authorization: `Bearer ${token}`,
               },

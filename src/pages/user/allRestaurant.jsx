@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FaMapMarkerAlt, FaClock, FaUtensils } from 'react-icons/fa';
 import './css/allrestaurant.css';
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
 
 const RestaurantListing = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -27,7 +29,7 @@ const RestaurantListing = () => {
       // Add a try-catch specifically for the API call
       try {
         const response = await axios.get(
-          `http://localhost:3001/api/restaurant/allrestaurants`,
+          `${backendurl}/restaurant/allrestaurants`,
           {
             headers: {
               Authorization: `Bearer ${token}`

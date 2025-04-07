@@ -2,6 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { Alert, Container, Card, Button } from "react-bootstrap";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
+
+
+
+
 
 const DeleteUser = () => {
   const { id } = useParams(); // Get user ID from URL
@@ -14,7 +22,7 @@ const DeleteUser = () => {
       try {
         const token = localStorage.getItem("token");
 
-        const response = await axios.delete(`http://localhost:3001/api/admin/deleteuser/${id}`, {
+        const response = await axios.delete(`${backendurl}/admin/deleteuser/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
 

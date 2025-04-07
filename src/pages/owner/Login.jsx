@@ -3,6 +3,9 @@ import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./css/login.css"; // Import custom CSS
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
 
 const OwnerLogin = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -18,7 +21,7 @@ const OwnerLogin = () => {
   
     try {
       const response = await axios.put(
-        "http://localhost:3001/api/owner/ownerlogin",
+        `${backendurl}/owner/ownerlogin`,
         credentials
       );
   

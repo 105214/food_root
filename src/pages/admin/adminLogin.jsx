@@ -3,6 +3,13 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Form, Button, Alert, Container, Card } from "react-bootstrap";
 import "./css/adminlogin.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
+
+
+
 
 const AdminLogin = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +31,7 @@ const AdminLogin = () => {
     
     try {
       const response = await axios.put(
-        "http://localhost:3001/api/admin/adminlogin", 
+        `${backendurl}/admin/adminlogin`, 
         formData, 
         { withCredentials: true } // This allows cookies to be set
       );

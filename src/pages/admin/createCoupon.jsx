@@ -4,6 +4,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./createcoupon.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
+
 
 const CouponForm = () => {
   const navigate=useNavigate()
@@ -21,7 +26,7 @@ const CouponForm = () => {
       console.log("Token being sent:", token); // Debugging step
   
       const response = await axios.post(
-        "http://localhost:3001/api/coupon/createcoupon",
+        `${backendurl}/coupon/createcoupon`,
         { code, discount, expiryDate },
         {
           headers: { Authorization: `Bearer ${token}` },

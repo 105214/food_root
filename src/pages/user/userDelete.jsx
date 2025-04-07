@@ -3,6 +3,9 @@ import axios from "axios";
 import { Container, Card, Button, Spinner, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './userdelete.css'
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
 
 const UserDelete = () => {
   const [user, setUser] = useState(null);
@@ -13,7 +16,7 @@ const UserDelete = () => {
   useEffect(() => {
     const fetchUser = async () => {
         try {
-          const response = await axios.get("http://localhost:3001/api/user/profile", {
+          const response = await axios.get(`${backendurl}/user/profile`, {
             withCredentials: true, 
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -44,7 +47,7 @@ const UserDelete = () => {
         return;
       }
   
-      await axios.delete("http://localhost:3001/api/user/delete", {
+      await axios.delete(`${backendurl}/user/delete`, {
         headers: {
           Authorization: `Bearer ${token}`, // Include token in request
         },
@@ -62,21 +65,7 @@ const UserDelete = () => {
     }
   };
   
-//   const handleDelete = async () => {
-//     try {
-//       setLoading(true);
-//       await axios.delete("http://localhost:3001/api/user/delete", {
-//         data: { _id: user._id },
-//         withCredentials: true,
-//       });
-//       setSuccess("User profile deleted successfully");
-//       setUser(null);
-//     } catch (err) {
-//       setError("Failed to delete user");
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
+
 
   return (
     <Container className="d-flex justify-content-center align-items-center vh-100">

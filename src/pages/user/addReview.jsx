@@ -14,6 +14,9 @@ const AddReview = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [hover, setHover] = useState(0);
+  const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
 
   useEffect(() => {
     const fetchDishDetails = async () => {
@@ -24,12 +27,12 @@ const AddReview = () => {
           setLoading(false);
           return;
         }
-  
+ 
         const response = await axios.get(
-          `http://localhost:3001/api/dish/getdish/${dishId}`,
+          `${backendurl}/dish/getdish/${dishId}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
-        
+        //  `http://localhost:3001/api/dish/getdish/${dishId}`,
         setDish(response.data);
         setFormData(prev => ({ ...prev, dishId }));
         setLoading(false);
@@ -82,7 +85,7 @@ const AddReview = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:3001/api/review/addreview",
+        `${backendurl}/review/addreview`,
         { dishId,rating:formData.rating,comment:formData.comment },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -150,3 +153,4 @@ const AddReview = () => {
 };
 
 export default AddReview;
+  

@@ -3,6 +3,10 @@ import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./css/ownerlogout.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
 
 const OwnerLogout = () => {
   const navigate = useNavigate();
@@ -11,7 +15,7 @@ const OwnerLogout = () => {
     try {
       const token = localStorage.getItem("token"); // Get token from localStorage
       await axios.put(
-        "http://localhost:3001/api/owner/ownerlogout",
+        `${backendurl}/owner/ownerlogout`,
         {},
         {
           withCredentials: true,

@@ -3,6 +3,11 @@ import { Container, Card, Form, Button, Alert, Spinner, Badge } from "react-boot
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./css/orderstatus.css"; // You'll need to create this CSS file
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
+
 
 const OrderStatusPage = () => {
   const [order, setOrder] = useState(null);
@@ -34,7 +39,7 @@ const OrderStatusPage = () => {
       
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(`http://localhost:3001/api/admin/order/${orderId}`, {
+        const response = await axios.get(`${backendurl}/admin/order/${orderId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         
@@ -62,7 +67,7 @@ const handleStatusUpdate = async (e) => {
   try {
     const token = localStorage.getItem("token");
     await axios.post(
-      `http://localhost:3001/api/admin/orderstatus`, 
+      `${backendurl}/admin/orderstatus`, 
       { orderId, status: selectedStatus },
       { headers: { Authorization: `Bearer ${token}` } }
     );

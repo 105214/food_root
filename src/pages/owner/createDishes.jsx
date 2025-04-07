@@ -4,6 +4,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useParams, useLocation } from "react-router-dom";
 import "./css/createDishes.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
+
 
 function CreateDish() {
   const navigate = useNavigate();
@@ -41,7 +46,7 @@ function CreateDish() {
         }
 const ownerId=localStorage.getItem("ownerId")
         const response = await axios.get(
-          `http://localhost:3001/api/restaurant/restaurants/${ownerId}`, 
+          `${backendurl}/restaurant/restaurants/${ownerId}`, 
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -81,7 +86,7 @@ const ownerId=localStorage.getItem("ownerId")
         }
 
         const response = await axios.get(
-          `http://localhost:3001/api/restaurant/restaurantview/${selectedRestaurantId}`, 
+          `${backendurl}/restaurant/restaurantview/${selectedRestaurantId}`, 
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -153,7 +158,7 @@ const ownerId=localStorage.getItem("ownerId")
       }
 
       const response = await axios.post(
-        "http://localhost:3001/api/dish/adddish",
+        `${backendurl}/dish/adddish`,
         formData,
         {
           headers: {
@@ -345,305 +350,4 @@ const ownerId=localStorage.getItem("ownerId")
 }
 
 export default CreateDish;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from "react";
-// import { Form, Button, Container, Row, Col } from "react-bootstrap";
-// import axios from "axios";
-// import { useNavigate } from "react-router-dom";
-// import "./css/createDishes.css";
-// import { useParams, useLocation } from "react-router-dom";
-
-
-
-
-
-// function CreateDish() {
-//   const navigate=useNavigate()
-//   const { id } = useParams();
-//   const location = useLocation();
-//   const restaurantIdFromState = location.state?.restaurantId;
-  
-//   // Simplify restaurant ID handling - use ID from params or state
-//   const initialRestaurantId = id || restaurantIdFromState;
-//   const [selectedRestaurantId, setSelectedRestaurantId] = useState(initialRestaurantId);
-  
-//   const [dish, setDish] = useState({
-//     name: "",
-//     description: "",
-//     price: "",
-//     category: "",
-//     availability: true,
-//     ingredients: "",
-//   });
-
-//   const [imageFile, setImageFile] = useState(null);
-//   const [previewImage, setPreviewImage] = useState("");
-//   const [loading, setLoading] = useState(false);
-//   const [error, setError] = useState("");
-//   const [success, setSuccess] = useState("");
-
-//   // Fetch restaurant details when the component loads
-//   useEffect(() => {
-//     const fetchRestaurantData = async () => {
-//       try {
-//         const token = localStorage.getItem("token");
-//         if (!token) {
-//           setError("No token found. Please log in.");
-//           return;
-//         }
-
-//         if (!initialRestaurantId) {
-//           setError("No restaurant ID provided.");
-//           return;
-//         }
-
-//         const response = await axios.get(
-//           `http://localhost:3001/api/restaurant/restaurants/${initialRestaurantId}`, 
-//           {
-//             headers: { Authorization: `Bearer ${token}` },
-//           }
-//         );
-        
-//         console.log("Restaurant API response:", response.data);
-//         if (response.data.restaurant) {
-//           setSelectedRestaurantId(response.data.restaurant._id);
-//         } else {
-//           setError("No restaurant found.");
-//         }
-//       } catch (error) {
-//         console.error("Error fetching restaurant:", error);
-//         setError("Failed to fetch restaurant details.");
-//       }
-//     };
-
-//     if (initialRestaurantId) {
-//       fetchRestaurantData();
-//     }
-//   }, [initialRestaurantId]); // Only dependency is initialRestaurantId
-
-//   const handleFileChange = (e) => {
-//     const file = e.target.files[0];
-//     if (file) {
-//       setImageFile(file);
-//       setPreviewImage(URL.createObjectURL(file));
-//     }
-//   };
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setDish({ ...dish, [name]: value });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     setLoading(true);
-//     setError("");
-//     setSuccess("");
-
-//     if (!selectedRestaurantId) {
-//       setError("Restaurant ID is missing. Please refresh and try again.");
-//       setLoading(false);
-//       return;
-//     }
-
-//     const formData = new FormData();
-//     formData.append("name", dish.name);
-//     formData.append("description", dish.description);
-//     formData.append("price", dish.price);
-//     formData.append("category", dish.category);
-//     formData.append("availability", dish.availability.toString());
-//     formData.append("ingredients", dish.ingredients);
-//     formData.append("restaurantId", selectedRestaurantId);
-
-//     if (imageFile) {
-//       formData.append("imageUrl", imageFile);
-//     }
-
-//     try {
-//       const token = localStorage.getItem("token");
-//       if (!token) {
-//         setError("No token found. Please log in.");
-//         setLoading(false);
-//         return;
-//       }
-
-//       const response = await axios.post(
-//         "http://localhost:3001/api/dish/adddish",
-//         formData,
-//         {
-//           headers: {
-//             Authorization: `Bearer ${token}`,
-//             "Content-Type": "multipart/form-data",
-//           },
-//         }
-//       );
-
-//       console.log("Dish added successfully:", response.data);
-//       setSuccess("Dish added successfully!");
-//       navigate("/owner/ownerdashboard")
-//       // Reset form
-//       setDish({
-//         name: "",
-//         description: "",
-//         price: "",
-//         category: "",
-//         availability: true,
-//         ingredients: "",
-//       });
-//       setImageFile(null);
-//       setPreviewImage("");
-     
-//     } catch (error) {
-//       console.error("Error adding dish:", error.response?.data || error.message);
-//       setError(error.response?.data?.message || "Error adding dish. Please try again.");
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
-//   return (
-//     <div className="content">
-//       <Container className="dish-container">
-//         <h2 className="text-center">Add New Dish</h2>
-//         {error && <div className="alert alert-danger">{error}</div>}
-//         {success && <div className="alert alert-success">{success}</div>}
-        
-//         <Form onSubmit={handleSubmit} className="dish-form">
-//           <Row>
-//             <Col md={6}>
-//               <Form.Group controlId="dishName">
-//                 <Form.Label>Dish Name</Form.Label>
-//                 <Form.Control
-//                   type="text"
-//                   name="name"
-//                   value={dish.name}
-//                   onChange={handleChange}
-//                   required
-//                   placeholder="Enter dish name"
-//                 />
-//               </Form.Group>
-
-//               <Form.Group controlId="dishDescription">
-//                 <Form.Label>Description</Form.Label>
-//                 <Form.Control
-//                   as="textarea"
-//                   rows={3}
-//                   name="description"
-//                   value={dish.description}
-//                   onChange={handleChange}
-//                   placeholder="Enter dish description"
-//                 />
-//               </Form.Group>
-
-//               <Form.Group controlId="dishPrice">
-//                 <Form.Label>Price ($)</Form.Label>
-//                 <Form.Control
-//                   type="number"
-//                   name="price"
-//                   value={dish.price}
-//                   onChange={handleChange}
-//                   required
-//                   placeholder="Enter price"
-//                   min="0"
-//                   step="0.01"
-//                 />
-//               </Form.Group>
-//             </Col>
-
-//             <Col md={6}>
-//               <Form.Group controlId="dishCategory">
-//                 <Form.Label>Category</Form.Label>
-//                 <Form.Select 
-//                   name="category" 
-//                   value={dish.category} 
-//                   onChange={handleChange} 
-//                   required
-//                 >
-//                   <option value="">Select Category</option>
-//                   <option value="meat">Meat</option>
-//                   <option value="fish">Fish</option>
-//                   <option value="Veg">Veg</option>
-//                   <option value="Rice">Rice</option>
-//                   <option value="Drinks">Drinks</option>
-//                   <option value="Non-veg">Non-Veg</option>
-//                 </Form.Select>
-//               </Form.Group>
-
-//               <Form.Group controlId="dishIngredients">
-//                 <Form.Label>Ingredients (comma separated)</Form.Label>
-//                 <Form.Control
-//                   type="text"
-//                   name="ingredients"
-//                   value={dish.ingredients}
-//                   onChange={handleChange}
-//                   placeholder="e.g., Chicken, Spices, Oil"
-//                 />
-//               </Form.Group>
-
-//               <Form.Group controlId="dishImage">
-//                 <Form.Label>Upload Image</Form.Label>
-//                 <Form.Control
-//                   type="file"
-//                   name="imageFile"
-//                   accept="image/*"
-//                   onChange={handleFileChange}
-//                 />
-//               </Form.Group>
-
-//               {previewImage && (
-//                 <div className="image-preview mt-3">
-//                   <img 
-//                     src={previewImage} 
-//                     alt="Dish Preview" 
-//                     className="preview-img img-thumbnail" 
-//                     style={{ maxHeight: "200px" }}
-//                   />
-//                 </div>
-//               )}
-
-//               <Form.Group controlId="dishAvailability" className="mt-3">
-//                 <Form.Check
-//                   type="checkbox"
-//                   label="Available"
-//                   name="availability"
-//                   checked={dish.availability}
-//                   onChange={(e) => setDish({ ...dish, availability: e.target.checked })}
-//                 />
-//               </Form.Group>
-
-//               <Button 
-//                 variant="warning" 
-//                 type="submit" 
-//                 className="submit-btn mt-3" 
-//                 disabled={loading}
-//               >
-//                 {loading ? "Adding..." : "Add Dish"}
-//               </Button>
-//             </Col>
-//           </Row>
-//         </Form>
-//       </Container>
-//     </div>
-//   );
-// }
-
-// export default CreateDish;
-
-
-
-
 

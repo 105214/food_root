@@ -3,6 +3,9 @@ import { Container, Button, ListGroup, Alert, Badge, Row, Col } from "react-boot
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./deleteCart.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
 
 const DeleteCart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -22,7 +25,7 @@ const DeleteCart = () => {
   
       console.log("Sending Request with Token:", token);
   
-      const response = await axios.get("http://localhost:3001/api/cart/getcart", {
+      const response = await axios.get(`${backendurl}/cart/getcart`, {
         headers: { 
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -78,7 +81,7 @@ const DeleteCart = () => {
       }
 
       const response = await axios.delete(
-        `http://localhost:3001/api/cart/deletecart/${dishId}`,
+        `${backendurl}/cart/deletecart/${dishId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

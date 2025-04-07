@@ -3,6 +3,7 @@ import { Card, Button, Spinner, Alert, Container, Row, Col, Badge } from "react-
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./allorders.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
 
 const AdminOrder = () => {
   const [orders, setOrders] = useState([]);
@@ -14,7 +15,7 @@ const AdminOrder = () => {
     const fetchOrders = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:3001/api/admin/allorders", {
+        const response = await axios.get(`${backendurl}/admin/allorders`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOrders(response.data.orders);

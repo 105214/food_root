@@ -3,6 +3,13 @@ import axios from "axios";
 import { Table, Container, Spinner, Alert, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./css/allusers.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
+
+
+
 
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
@@ -19,7 +26,7 @@ const AllUsers = () => {
         return;
       }
       try {
-        const response = await axios.get("http://localhost:3001/api/admin/allusers", {
+        const response = await axios.get(`${backendurl}/admin/allusers`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUsers(response.data.users);

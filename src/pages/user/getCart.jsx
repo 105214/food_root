@@ -4,6 +4,9 @@ import { Container, Table, Button, Spinner, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./getcart.css";
 import { useNavigate } from "react-router-dom";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
 
 const GetCart = () => {
     const navigate=useNavigate()
@@ -14,7 +17,7 @@ const GetCart = () => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/api/cart/getcart", {
+        const response = await axios.get(`${backendurl}/cart/getcart`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setCart(response.data.cart);
@@ -28,19 +31,7 @@ const GetCart = () => {
     fetchCart();
   }, []);
 
-//   const handleDelete = async (dishId) => {
-//     try {
-//       await axios.delete(`http://localhost:3001/api/cart/deletedishes/${dishId}`, {
-//         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-//       });
-//       setCart((prevCart) => ({
-//         ...prevCart,
-//         items: prevCart.items.filter((item) => item.dishId._id !== dishId),
-//       }));
-//     } catch (error) {
-//       console.error("Error deleting item", error);
-//     }
-//   };
+
 
   if (loading) return <Spinner animation="border" className="loading-spinner" />;
   if (error) return <Alert variant="danger">{error}</Alert>;

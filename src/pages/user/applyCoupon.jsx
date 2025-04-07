@@ -3,6 +3,13 @@ import axios from "axios";
 import { Form, Button, Alert, Container, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./applyCoupon.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
+
+
+
 
 const ApplyCoupon = () => {
   const [couponCode, setCouponCode] = useState("");
@@ -19,7 +26,7 @@ const ApplyCoupon = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:3001/api/coupon/applycoupon",
+        `${backendurl}/coupon/applycoupon`,
         { couponCode },
         {
           headers: { Authorization: `Bearer ${token}` },

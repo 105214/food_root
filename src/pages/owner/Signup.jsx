@@ -3,7 +3,7 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import './css/Signup.css'
-
+const backendurl=import.meta.env.VITE_BACKEND_URL
 
 function OwnerSignup() {
   const navigate=useNavigate()
@@ -85,7 +85,7 @@ function OwnerSignup() {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:3001/api/owner/addowner",
+        `${backendurl}/owner/addowner`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Container, Row, Col, Card, Button, Badge, Spinner, Alert } from "react-bootstrap";
 import "./alldishes.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
 
 const DishesPage = () => {
   const [dishes, setDishes] = useState([]);
@@ -22,7 +25,7 @@ const DishesPage = () => {
       }
     
       const response = await axios.post(
-        `http://localhost:3001/api/cart/addcart`,
+        `${backendurl}/cart/addcart`,
         {
           dishId: dish._id,
           quantity: 1,
@@ -57,7 +60,7 @@ const DishesPage = () => {
           return;
         }
         
-        const response = await axios.get(`http://localhost:3001/api/dish/alldishes`, {
+        const response = await axios.get(`${backendurl}/dish/alldishes`, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -91,7 +94,7 @@ const DishesPage = () => {
         // Handle unauthorized access
         if (error.response?.status === 401) {
           localStorage.removeItem("token");
-          navigate("/login");
+          navigate("/");
         }
         
         setError(errorMessage);

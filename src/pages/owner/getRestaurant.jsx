@@ -3,7 +3,7 @@ import { useParams,useNavigate } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/getrestaurant.css";
-
+const backendurl=import.meta.env.VITE_BACKEND_URL
 
 
 
@@ -27,7 +27,7 @@ const navigate=useNavigate()
   
     try {
       // Log the URL to confirm what you're requesting
-      const url = `http://localhost:3001/api/restaurant/restaurants/${ownerId}`;
+      const url = `${backendurl}/restaurant/restaurants/${ownerId}`;
       console.log("Requesting URL:", url);
       
       const response = await axios.get(

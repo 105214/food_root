@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./order.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
 
 const Order = () => {
   const [orders, setOrders] = useState([]);
@@ -9,7 +13,7 @@ const Order = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/orders/getorders`)
+      .get(`${backendurl}/orders/getorders`)
       .then((response) => {
         setOrders(response.data);
       })

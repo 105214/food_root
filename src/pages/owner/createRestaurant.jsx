@@ -3,6 +3,10 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./css/createRestaurant.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
 
 function CreateRestaurant() {
   const navigate=useNavigate()
@@ -54,7 +58,7 @@ function CreateRestaurant() {
     }
   
     try {
-      const response = await axios.post("http://localhost:3001/api/restaurant/addrestaurant", formData, {
+      const response = await axios.post(`${backendurl}/restaurant/addrestaurant`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": `Bearer ${token}`
@@ -216,107 +220,3 @@ export default CreateRestaurant;
 
 
 
-{/* <div className="content">
-      <Container className="restaurant-container">
-        <h2 className="text-center">Add New Restaurant</h2>
-        <Form onSubmit={handleSubmit} className="restaurant-form">
-          <Row>
-            <Col md={6}>
-              <Form.Group controlId="restaurantName">
-                <Form.Label>Restaurant Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="name"
-                  value={restaurant.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="Enter restaurant name"
-                />
-              </Form.Group>
-
-              <Form.Group controlId="restaurantLocation">
-                <Form.Label>Location</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="location"
-                  value={restaurant.location}
-                  onChange={handleChange}
-                  required
-                  placeholder="Enter location"
-                />
-              </Form.Group>
-
-              <Form.Group controlId="restaurantAddress">
-                <Form.Label>Address</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="address"
-                  value={restaurant.address}
-                  onChange={handleChange}
-                  required
-                  placeholder="Enter address"
-                />
-              </Form.Group>
-
-              <Form.Group controlId="restaurantMobile">
-                <Form.Label>Mobile Number</Form.Label>
-                <Form.Control
-                  type="tel"
-                  name="mobile"
-                  value={restaurant.mobile}
-                  onChange={handleChange}
-                  required
-                  placeholder="Enter contact number"
-                />
-              </Form.Group>
-            </Col>
-
-            <Col md={6}>
-              <Form.Group controlId="restaurantOpeningHours">
-                <Form.Label>Opening Hours</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="openingHours"
-                  value={restaurant.openingHours}
-                  onChange={handleChange}
-                  required
-                  placeholder="e.g., 9:00 AM - 10:00 PM"
-                />
-              </Form.Group>
-
-              <Form.Group controlId="restaurantDescription">
-                <Form.Label>Description</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  rows={3}
-                  name="description"
-                  value={restaurant.description}
-                  onChange={handleChange}
-                  required
-                  placeholder="Enter restaurant description"
-                />
-              </Form.Group>
-
-              <Form.Group controlId="restaurantImage">
-                <Form.Label>Upload Image</Form.Label>
-                <Form.Control
-                  type="file"
-                  name="image"
-                  onChange={handleChange}
-                  accept="image/*"
-                />
-              </Form.Group>
-
-              {previewImage && (
-                <div className="image-preview">
-                  <img src={previewImage} alt="Restaurant Preview" className="preview-img" />
-                </div>
-              )}
-              <Button variant="success" type="submit" className="submit-btn add-restaurant">
-                Add Restaurant
-              </Button>
-            </Col>
-          </Row>
-        </Form>
-      </Container>
-    </div> */}

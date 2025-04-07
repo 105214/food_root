@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './userUpdate.css';
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
 
 const UpdateProfile = () => {
   const [user, setUser] = useState({ 
@@ -32,7 +35,7 @@ const navigate=useNavigate()
       console.log("Using token:", token.substring(0, 15) + "...");
     
       try {
-        const response = await axios.get("http://localhost:3001/api/user/profile", {
+        const response = await axios.get(`${backendurl}/user/profile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         
@@ -100,7 +103,7 @@ const navigate=useNavigate()
       }
       
       const response = await axios.put(
-        'http://localhost:3001/api/user/profileupdate', 
+        `${backendurl}/user/profileupdate`, 
         formData,
         {
           headers: { 
@@ -123,59 +126,7 @@ const navigate=useNavigate()
       // ...rest of your error handling code
     }
   };
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setMessage('');
-    
-  //   try {
-  //     const token = localStorage.getItem("token");
-  //     if (!token) {
-  //       setMessage('No authentication token found');
-  //       return;
-  //     }
-      
-  //     console.log("Submitting data:", user);
-      
-  //     // Create request data
-  //     const userData = {
-  //       _id: user._id,  // Make sure you're sending the user ID
-  //       name: user.name,
-  //       email: user.email,
-  //       mobile: user.mobile,
-  //       address: user.address,
-  //       profilePic:user.profilePic,
-  //     };
-      
-  //     const response = await axios.put(
-  //       'http://localhost:3001/api/user/profileupdate', 
-  //       userData,
-  //       {
-  //         headers: { 
-  //           'Authorization': `Bearer ${token}`,
-  //           'Content-Type': 'application/json'
-  //         }
-  //       }
-  //     );
-      
-  //     console.log("Update response:", response.data);
-  //     setMessage(response.data.message || 'Profile updated successfully');
-      
-  //     // Update local user state with returned data if available
-  //     if (response.data.user) {
-  //       setUser(prev => ({...prev, ...response.data.user}));
-  //     }
-  //   } catch (error) {
-  //     console.error('Update error:', error);
-      
-  //     if (error.response) {
-  //       setMessage(`Error: ${error.response.status} - ${error.response.data.message || 'Update failed'}`);
-  //     } else if (error.request) {
-  //       setMessage('Error: No response from server');
-  //     } else {
-  //       setMessage(`Error updating profile: ${error.message}`);
-  //     }
-  //   }
-  // };
+ 
 
   return (
     <Container className="profile-container">
@@ -255,171 +206,3 @@ const navigate=useNavigate()
 
 export default UpdateProfile;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import { Form, Button, Container, Alert } from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import './userUpdate.css';
-
-// const UpdateProfile = () => {
-//   const [user, setUser] = useState({ 
-//     name: '', 
-//     email: '',
-//      mobile: '', 
-//      address: '', 
-//      profilePic: null
-//      });
-//   const [message, setMessage] = useState('');
-
-//   // useEffect(() => {
-//   //   axios.get('http://localhost:3001/api/user/profile')
-//   //     .then(response => setUser(response.data))
-//   //     .catch(error => console.error('Error fetching user data:', error));
-//   // }, []);
-
-//   useEffect(() => {
-//     const token = localStorage.getItem("token");
-  
-//     if (!token) {
-//       console.error("No token found");
-//       return;
-//     }
-  
-//     axios
-//       .get("http://localhost:3001/api/user/profile", {
-//         headers: { Authorization: `Bearer ${token}` },
-//       })
-//       .then((response) => setUser(response.data))
-//       .catch((error) => console.error("Error fetching user data:", error));
-//   }, []);
-  
-  
-
-
-//   const handleChange = (e) => {
-//     setUser({ ...user, [e.target.name]: e.target.value });
-//   };
-
-//   const handleFileChange = (e) => {
-//     setUser({ ...user, profilePic: e.target.files[0] });
-//   };
-
-
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-    
-//     try {
-//       const token = localStorage.getItem("token");
-//       if (!token) {
-//         setMessage('No authentication token found');
-//         return;
-//       }
-      
-//       // Create request data
-//       const userData = {
-//         _id: user._id,  // Make sure you're sending the user ID
-//         name: user.name,
-//         email: user.email,
-//         mobile: user.mobile,
-//         address: user.address
-//       };
-      
-//       // For profile pic, you would need a separate endpoint or multipart handling
-      
-//       const response = await axios.put(
-//         'http://localhost:3001/api/user/profileupdate', 
-//         userData,
-//         {
-//           headers: { 
-//             'Authorization': `Bearer ${token}`,
-//             'Content-Type': 'application/json'
-//           }
-//         }
-//       );
-      
-//       setMessage(response.data.message);
-//     } catch (error) {
-//       console.error('Update error:', error);
-//       setMessage('Error updating profile: ' + (error.response?.data?.message || error.message));
-//     }
-//   };
-//   // const handleSubmit = async (e) => {
-//   //   e.preventDefault();
-//   //   const formData = new FormData();
-//   //   formData.append('name', user.name);
-//   //   formData.append('email', user.email);
-//   //   formData.append('mobile', user.mobile);
-//   //   formData.append('address', user.address);
-//   //   if (user.profilePic) formData.append('profilePic', user.profilePic);
-
-//   //   try {
-//   //     const response = await axios.put('http://localhost:3001/api/user/profileupdate', formData, {
-//   //       headers: { 'Content-Type': 'multipart/form-data' },
-//   //     });
-//   //     setMessage(response.data.message);
-//   //   } catch (error) {
-//   //     setMessage('Error updating profile');
-//   //   }
-//   // };
-
-//   return (
-//     <Container className="profile-container">
-//       <h2 className="text-center">Update Profile</h2>
-//       {message && <Alert variant="info">{message}</Alert>}
-//       <Form onSubmit={handleSubmit}>
-//         <Form.Group>
-//           <Form.Label>Name</Form.Label>
-//           <Form.Control type="text" name="name" value={user.name??"No Name"} onChange={handleChange} required />
-//         </Form.Group>
-
-//         <Form.Group>
-//           <Form.Label>Email</Form.Label>
-//           <Form.Control type="email" name="email" value={user.email??"No Email"} onChange={handleChange} required />
-//         </Form.Group>
-
-//         <Form.Group>
-//           <Form.Label>Mobile</Form.Label>
-//           <Form.Control type="text" name="mobile" value={user.mobile??"No Mobile"} onChange={handleChange} required />
-//         </Form.Group>
-
-//         <Form.Group>
-//           <Form.Label>Address</Form.Label>
-//           <Form.Control type="text" name="address" value={user.address??"No Address"} onChange={handleChange} required />
-//         </Form.Group>
-
-//         <Form.Group>
-//           <Form.Label>Profile Picture</Form.Label>
-//           <Form.Control type="file" onChange={handleFileChange} />
-//         </Form.Group>
-
-//         <Button variant="primary" type="submit" className="mt-3">Update Profile</Button>
-//       </Form>
-//     </Container>
-//   );
-// };
-
-// export default UpdateProfile;

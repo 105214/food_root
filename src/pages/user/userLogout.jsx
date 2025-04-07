@@ -3,6 +3,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Button, Container, Card, Alert } from "react-bootstrap";
 import "./userlogout.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
+
 
 const UserLogout = () => {
   const navigate = useNavigate();
@@ -21,7 +26,7 @@ const UserLogout = () => {
   
       console.log("Token:", token); // Log token for debugging
   
-      const response = await fetch("http://localhost:3001/api/user/logout", {
+      const response = await fetch(`${backendurl}/user/logout`, {
         method: "PUT",
         credentials:"include",
         headers: {

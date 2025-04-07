@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Container, Card, Alert } from "react-bootstrap";
 import "./css/adminlogout.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
 
 const AdminLogout = () => {
   const navigate = useNavigate();
@@ -27,7 +31,7 @@ const AdminLogout = () => {
         return;
       }
 
-      const response = await fetch("http://localhost:3001/api/admin/adminlogout", {
+      const response = await fetch(`${backendurl}/admin/adminlogout`, {
         method: "PUT", // Change to POST if needed
         headers: {
           "Content-Type": "application/json",

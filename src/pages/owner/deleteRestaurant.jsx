@@ -3,6 +3,9 @@ import { useParams, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/deleterestaurant.css";
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
 
 const DeleteRestaurant = () => {
   const { id } = useParams();
@@ -32,7 +35,7 @@ const DeleteRestaurant = () => {
     
     try {
       const response = await axios.delete(
-        `http://localhost:3001/api/restaurant/deleterestaurant/${id}`,
+        `${backendurl}/restaurant/deleterestaurant/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
