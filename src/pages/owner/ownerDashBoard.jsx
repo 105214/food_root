@@ -26,7 +26,7 @@ const OwnerDashboard = () => {
                 <Card.Body>
                   <Card.Title>Create Restaurant</Card.Title>
                   <Card.Text>Add a new restaurant to your portfolio</Card.Text>
-                  <Link to="/addrestaurant" className="btn btn-primary dashboard-btn">Get Started</Link>
+                  <Link to="/owner/addrestaurant" className="btn btn-primary dashboard-btn">Get Started</Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -38,7 +38,7 @@ const OwnerDashboard = () => {
                 <Card.Body>
                   <Card.Title>View Restaurant</Card.Title>
                   <Card.Text>See and manage your existing restaurants</Card.Text>
-                  <Link to={`/restaurants/${ownerId}`} className="btn btn-primary dashboard-btn">View Details</Link>
+                  <Link to={`/owner/restaurants/${ownerId}`} className="btn btn-primary dashboard-btn">View Details</Link>
                 </Card.Body>
               </Card>
             </Col>

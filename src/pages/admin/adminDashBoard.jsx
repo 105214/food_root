@@ -35,7 +35,7 @@ const AdminDashboard = () => {
         <Col md={6} xl={3}>
           <Card 
             className="stat-card clickable" 
-            onClick={() => handleNavigation('/getallcoupon')}
+            onClick={() => handleNavigation('/admin/getallcoupon')}
           >
             <Card.Body>
               <div className="stat-icon users">

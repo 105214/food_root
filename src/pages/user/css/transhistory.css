@@ -1,0 +1,150 @@
+.transaction-history-container {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.filters-section {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.transaction-table th {
+    background-color: #f1f1f1;
+    font-weight: 600;
+}
+
+.transaction-row {
+    transition: all 0.2s ease;
+}
+
+.transaction-row:hover {
+    background-color: rgba(0, 123, 255, 0.05) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.transaction-id {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+/* Modal styles */
+.transaction-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+}
+
+.transaction-modal-content {
+    background-color: white;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease;
+}
+
+.transaction-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.transaction-modal-body {
+    padding: 1.5rem;
+}
+
+.transaction-detail-item {
+    display: flex;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.transaction-detail-item .label {
+    font-weight: 600;
+    width: 150px;
+    color: #495057;
+}
+
+.transaction-detail-item .value {
+    flex: 1;
+}
+
+.order-items-section {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.order-items-section h5 {
+    margin-bottom: 1rem;
+    color: #495057;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .transaction-detail-item {
+        flex-direction: column;
+    }
+    
+    .transaction-detail-item .label {
+        width: 100%;
+        margin-bottom: 0.25rem;
+    }
+    
+    .transaction-modal-content {
+        width: 95%;
+    }
+}
+
+/* Animation */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Status badge styles */
+.badge {
+    padding: 0.5em 0.75em;
+    font-weight: 500;
+}
+
+/* Pagination styles */
+.pagination .page-link {
+    color: #495057;
+    border-color: #dee2e6;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.pagination .page-link:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}

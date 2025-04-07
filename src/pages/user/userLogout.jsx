@@ -36,7 +36,7 @@ const UserLogout = () => {
   
       localStorage.removeItem("token"); // Remove token on logout
       setMessage("User logged out successfully.");
-      setTimeout(() => navigate("/login"), 2000);
+      setTimeout(() => navigate("/"), 2000);
     } catch (err) {
       setError(err.message || "Logout failed");
     }

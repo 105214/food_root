@@ -69,74 +69,7 @@ useEffect(() => {
     }
   };
 
-  // Fetch restaurant data
-//   useEffect(() => {
-//    // In UpdateRestaurant.js
-// const fetchRestaurantDetails = async () => {
-//   const token = localStorage.getItem("token");
-//   if (!token) return;
 
-//   try {
-//     setIsLoading(true);
-//     setError(null);
-//     console.log(`Fetching restaurant with ID: ${id}`);
-    
-//     // Use the new endpoint for single restaurant
-//     const response = await axios.get(
-//       `http://localhost:3001/api/restaurant/restaurant/${id}`, 
-//       {
-//         headers: { Authorization: `Bearer ${token}` },
-//         signal: controller.signal
-//       }
-//     );
-    
-//     if (response.data.success) {
-//       const restaurantData = response.data.data;
-//       console.log("Restaurant data found:", restaurantData);
-      
-//       setFormData({
-//         name: restaurantData.name || "",
-//         address: restaurantData.address || "",
-//         mobile: restaurantData.mobile || "",
-//         imageUrl: restaurantData.imageUrl || "",
-//         location: restaurantData.location || "",
-//         openingHours: restaurantData.openingHours || "",
-//         description: restaurantData.description || "",
-//       });
-      
-//       if (restaurantData.imageUrl) {
-//         setPreviewImage(getImageUrl(restaurantData.imageUrl));
-//       }
-//     } else {
-//       throw new Error("Restaurant not found");
-//     }
-//   } catch (error) {
-//     // Error handling code (unchanged)
-//   } finally {
-//     setIsLoading(false);
-//   }
-// };
-
-
-
-
-
-
-
-
-
-
-
-
-
-//     if (id) {
-//       fetchRestaurantDetails();
-//     } else {
-//       setError("No restaurant ID provided");
-//     }
-//   }, [id, navigate, imageKey]);
-
-// Fetch restaurant data
 useEffect(() => {
   const fetchRestaurantDetails = async () => {
     const token = localStorage.getItem("token");

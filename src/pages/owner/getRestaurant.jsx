@@ -101,28 +101,28 @@ const navigate=useNavigate()
       <div className="button-group">
         <button 
           className="btn btn-primary"
-          onClick={() => navigate(`/updaterestaurant/${restaurant._id}`)}
+          onClick={() => navigate(`/owner/updaterestaurant/${restaurant._id}`)}
         >
           Update
         </button>
         
         <button 
           className="btn btn-danger"
-          onClick={() => navigate(`/deleterestaurant/${restaurant._id}`)}
+          onClick={() => navigate(`/owner/deleterestaurant/${restaurant._id}`)}
         >
           Delete
         </button>
         
         <button 
           className="btn btn-success"
-          onClick={() => navigate(`/adddish`, {state:{restaurantId:restaurant._id}})}
+          onClick={() => navigate(`/owner/adddish`, {state:{restaurantId:restaurant._id}})}
         >
           Add Dish
         </button>
         
         <button 
           className="btn btn-info"
-          onClick={() => navigate(`/ownerdish`)}
+          onClick={() => navigate(`/owner/ownerdish`)}
         >
           View Dishes
         </button>

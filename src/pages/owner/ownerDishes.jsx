@@ -85,7 +85,7 @@ const OwnerDishes = () => {
                     </div>
                   )}
                 </div>
-                <button className="btn btn-primary view-button" onClick={() => navigate(`/viewdish/${dish._id}`)}>
+                <button className="btn btn-primary view-button" onClick={() => navigate(`/owner/viewdish/${dish._id}`)}>
                   View
                 </button>
               </div>

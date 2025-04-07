@@ -52,35 +52,36 @@ const OrderStatusPage = () => {
   }, [orderId]);
   
   // Handle status update
-  const handleStatusUpdate = async (e) => {
-    e.preventDefault();
-    setUpdating(true);
-    setUpdateSuccess(false);
-    setUpdateError(null);
+// Change this in your handleStatusUpdate function
+const handleStatusUpdate = async (e) => {
+  e.preventDefault();
+  setUpdating(true);
+  setUpdateSuccess(false);
+  setUpdateError(null);
+  
+  try {
+    const token = localStorage.getItem("token");
+    await axios.post(
+      `http://localhost:3001/api/admin/orderstatus`, 
+      { orderId, status: selectedStatus },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
     
-    try {
-      const token = localStorage.getItem("token");
-      await axios.get(
-        `http://localhost:3001/api/admin/orderstatus`, 
-        { orderId, status: selectedStatus },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-      
-      setUpdateSuccess(true);
-      // Update local state
-      setOrder(prev => ({ ...prev, status: selectedStatus }));
-      
-      // Clear success message after 3 seconds
-      setTimeout(() => {
-        setUpdateSuccess(false);
-      }, 3000);
-    } catch (error) {
-      console.error("Error updating status:", error);
-      setUpdateError("Failed to update status. " + (error.response?.data?.message || error.message));
-    }
+    setUpdateSuccess(true);
+    // Update local state
+    setOrder(prev => ({ ...prev, status: selectedStatus }));
     
-    setUpdating(false);
-  };
+    // Clear success message after 3 seconds
+    setTimeout(() => {
+      setUpdateSuccess(false);
+    }, 3000);
+  } catch (error) {
+    console.error("Error updating status:", error);
+    setUpdateError("Failed to update status. " + (error.response?.data?.message || error.message));
+  }
+  
+  setUpdating(false);
+};
   
   // Function to get badge variant based on status
   const getStatusBadgeVariant = (status) => {

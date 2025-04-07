@@ -1,0 +1,78 @@
+.cancel-payment-container {
+    padding: 3rem 1rem;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cancel-payment-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    background-color: #fff;
+  }
+  
+  .cancel-icon {
+    font-size: 5rem;
+    color: #dc3545;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cancel-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 1rem;
+  }
+  
+  .cancel-message {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+  }
+  
+  .error-details {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 576px) {
+    .action-buttons {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  
+  .return-cart-btn, .return-home-btn {
+    min-width: 180px;
+    padding: 0.6rem 1.5rem;
+  }
+  
+  .return-cart-btn {
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+  }
+  
+  .return-cart-btn:hover {
+    background-color: #ff5252;
+    border-color: #ff5252;
+  }
+  
+  .return-home-btn {
+    color: #495057;
+    border-color: #ced4da;
+  }
+  
+  .return-home-btn:hover {
+    background-color: #f8f9fa;
+    color: #343a40;
+  }

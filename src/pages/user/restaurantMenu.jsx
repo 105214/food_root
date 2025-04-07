@@ -24,7 +24,7 @@ const RestaurantMenuView = () => {
       try {
         setLoading(true);
         // Get the token from localStorage
-        const token = localStorage.getItem('userToken');
+        const token = localStorage.getItem('token');
         
         if (!token) {
           setError('Please login to view menu');

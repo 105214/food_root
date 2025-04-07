@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './userUpdate.css';
@@ -15,7 +16,7 @@ const UpdateProfile = () => {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+const navigate=useNavigate()
   // Load profile data
   useEffect(() => {
     const fetchProfile = async () => {
@@ -115,6 +116,7 @@ const UpdateProfile = () => {
       if (response.data.user) {
         setUser(prev => ({...prev, ...response.data.user}));
       }
+      navigate('/profile')
     } catch (error) {
       // Error handling remains the same
       console.error('Update error:', error);

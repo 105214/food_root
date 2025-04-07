@@ -1,0 +1,158 @@
+/* PaymentSuccess.css */
+.payment-success-container {
+    padding: 50px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+  }
+  
+  .success-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .success-title {
+    color: #28a745;
+    margin-bottom: 20px;
+    font-weight: 700;
+    animation: fadeIn 1.2s ease-out;
+  }
+  
+  .success-message {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #495057;
+    animation: fadeIn 1.4s ease-out;
+  }
+  
+  .order-info {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-left: 4px solid #17a2b8;
+    animation: fadeIn 1.6s ease-out;
+  }
+  
+  .redirect-info {
+    margin: 20px 0;
+    animation: fadeIn 1.8s ease-out;
+  }
+  
+  .countdown {
+    font-weight: bold;
+    color: #dc3545;
+    font-size: 20px;
+  }
+  
+  .progress-bar {
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    margin: 15px 0;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #28a745;
+    border-radius: 4px;
+    transition: width 1s linear;
+  }
+  
+  .home-button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    animation: pulse 2s infinite;
+  }
+  
+  /* Success animation */
+  .success-animation {
+    margin: 0 auto 40px;
+    animation: scaleIn 0.5s ease-out;
+  }
+  
+  .checkmark-circle {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #28a745;
+    margin: 0 auto;
+  }
+  
+  .checkmark {
+    transform: rotate(45deg);
+    height: 40px;
+    width: 20px;
+    display: block;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    position: absolute;
+    top: 20px;
+    left: 28px;
+  }
+  
+  .draw {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawCheck 1s ease-in-out forwards;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes drawCheck {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

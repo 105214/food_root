@@ -30,7 +30,7 @@ const OwnerDishDetails = () => {
   }, [id]);
 
   const handleUpdate = () => {
-    navigate(`/updatedish/${id}`);
+    navigate(`/owner/updatedish/${id}`);
   };
 
   const handleDelete = async () => {
