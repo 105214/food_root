@@ -4,7 +4,7 @@ import axios from 'axios';
 import { loadStripe } from "@stripe/stripe-js";
 import { Container, Card, Button, Form, Alert } from 'react-bootstrap';
 
-import './css/Userorder.css';
+import './css/userorder.css';
 
 const UserOrders = () => {
     const [orders, setOrders] = useState([]);
