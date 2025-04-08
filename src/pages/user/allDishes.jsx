@@ -18,17 +18,18 @@ const DishesPage = () => {
   const handleAddToCart = async (dish) => {
     try {
       const token = localStorage.getItem("token");
-     
+      
       if (!token) {
         setError("Please log in to add items to the cart.");
         return;
       }
-    
+  
       const response = await axios.post(
         `${backendurl}/api/cart/addcart`,
         {
           dishId: dish._id,
           quantity: 1,
+          price: dish.price  // ✅ ADD THIS LINE
         },
         {
           headers: { 
@@ -37,7 +38,7 @@ const DishesPage = () => {
           },
         }
       );
-    
+  
       if (response.data.success) {
         navigate("/addcart");
       } else {
@@ -48,6 +49,40 @@ const DishesPage = () => {
       setError(error.response?.data?.message || "Error adding item to cart.");
     }
   };
+  
+  // const handleAddToCart = async (dish) => {
+  //   try {
+  //     const token = localStorage.getItem("token");
+     
+  //     if (!token) {
+  //       setError("Please log in to add items to the cart.");
+  //       return;
+  //     }
+    
+  //     const response = await axios.post(
+  //       `${backendurl}/api/cart/addcart`,
+  //       {
+  //         dishId: dish._id,
+  //         quantity: 1,
+  //       },
+  //       {
+  //         headers: { 
+  //           Authorization: `Bearer ${token}`,
+  //           'Content-Type': 'application/json'
+  //         },
+  //       }
+  //     );
+    
+  //     if (response.data.success) {
+  //       navigate("/addcart");
+  //     } else {
+  //       setError(response.data.message || "Failed to add item to cart.");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error adding to cart:", error.response?.data || error);
+  //     setError(error.response?.data?.message || "Error adding item to cart.");
+  //   }
+  // };
 
   useEffect(() => {
     const fetchDishes = async () => {
@@ -173,6 +208,7 @@ const DishesPage = () => {
                     >
                       View Details
                     </Button>
+                   
                   </div>
                 </Card.Body>
               </Card>
