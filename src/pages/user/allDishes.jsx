@@ -29,7 +29,7 @@ const DishesPage = () => {
         {
           dishId: dish._id,
           quantity: 1,
-          price: dish.price  // ✅ ADD THIS LINE
+         
         },
         {
           headers: { 
