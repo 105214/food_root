@@ -4,6 +4,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { FaStar } from "react-icons/fa";
 import './addreview.css';
+const backendurl=import.meta.env.VITE_BACKEND_URL
+
+
+
 
 const AddReview = () => {
   const { dishId } = useParams();
@@ -14,7 +18,7 @@ const AddReview = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [hover, setHover] = useState(0);
-  const backendurl=import.meta.env.VITE_BACKEND_URL
+  
 
 
 
@@ -85,7 +89,7 @@ const AddReview = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        `${backendurl}/review/addreview`,
+        `${backendurl}/api/review/addreview`,
         { dishId,rating:formData.rating,comment:formData.comment },
         { headers: { Authorization: `Bearer ${token}` } }
       );

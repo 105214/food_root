@@ -17,7 +17,8 @@ const UserOrders = () => {
     const getAxiosInstance = () => {
         const token = localStorage.getItem('token');
         return axios.create({
-            baseURL: 'http://localhost:3001/api',
+            // baseURL: 'http://localhost:3001/api',
+            baseURL :'https://food-backend-rdl7.vercel.app/api',
             headers: { 
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json'
