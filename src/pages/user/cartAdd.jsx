@@ -96,7 +96,7 @@ const AddToCart = () => {
         item.dishId === dishId ? { ...item, quantity: newQuantity } : item
       );
       setCart(updatedCart);
-      const response = await axiosInstance.put(`${backendurl}/cart/updatecart/${dishId}`, {
+      const response = await axiosInstance.put(`${backendurl}/api/cart/updatecart/${dishId}`, {
         quantity: newQuantity
       });
       if (!response.data.success) {
