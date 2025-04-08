@@ -34,7 +34,7 @@ const UserProfile = () => {
     console.log("Token:", token); // Debugging
   
     try {
-      const response = await axios.get(`${backendurl}/user/profile`, {
+      const response = await axios.get(`${backendurl}/api/user/profile`, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });

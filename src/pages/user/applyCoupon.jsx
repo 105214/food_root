@@ -26,7 +26,7 @@ const ApplyCoupon = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        `${backendurl}/coupon/applycoupon`,
+        `${backendurl}/api/coupon/applycoupon`,
         { couponCode },
         {
           headers: { Authorization: `Bearer ${token}` },

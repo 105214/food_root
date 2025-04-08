@@ -16,7 +16,7 @@ const UserDelete = () => {
   useEffect(() => {
     const fetchUser = async () => {
         try {
-          const response = await axios.get(`${backendurl}/user/profile`, {
+          const response = await axios.get(`${backendurl}/api/user/profile`, {
             withCredentials: true, 
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -47,7 +47,7 @@ const UserDelete = () => {
         return;
       }
   
-      await axios.delete(`${backendurl}/user/delete`, {
+      await axios.delete(`${backendurl}/api/user/delete`, {
         headers: {
           Authorization: `Bearer ${token}`, // Include token in request
         },

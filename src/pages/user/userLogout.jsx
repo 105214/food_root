@@ -26,7 +26,7 @@ const UserLogout = () => {
   
       console.log("Token:", token); // Log token for debugging
   
-      const response = await fetch(`${backendurl}/user/logout`, {
+      const response = await fetch(`${backendurl}/api/user/logout`, {
         method: "PUT",
         credentials:"include",
         headers: {

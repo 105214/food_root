@@ -29,7 +29,7 @@ const AddReview = () => {
         }
  
         const response = await axios.get(
-          `${backendurl}/dish/getdish/${dishId}`,
+          `${backendurl}/api/dish/getdish/${dishId}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         //  `http://localhost:3001/api/dish/getdish/${dishId}`,

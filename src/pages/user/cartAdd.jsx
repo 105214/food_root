@@ -48,7 +48,7 @@ const AddToCart = () => {
   const fetchCart = async () => {
     try {
       setLoading(true);
-      const response = await axiosInstance.get(`${backendurl}/cart/getcart`);
+      const response = await axiosInstance.get(`${backendurl}/api/cart/getcart`);
       if (response.data?.cart?.items) {
         const processedCart = response.data.cart.items.map(item => ({
           ...item,
@@ -73,7 +73,7 @@ const AddToCart = () => {
 
   const handleRemoveCart = async (dishId) => {
     try {
-      const response = await axiosInstance.delete(`${backendurl}/cart/deletecart/${dishId}`);
+      const response = await axiosInstance.delete(`${backendurl}/api/cart/deletecart/${dishId}`);
       if (response.data.success) {
         setCart(prevCart => prevCart.filter(item => item.dishId._id !== dishId));
         setMessage("Item removed from cart successfully");
@@ -114,7 +114,7 @@ const AddToCart = () => {
   };
 
   const handleBuyAllItems = () => {
-    axiosInstance.post(`${backendurl}/order/placeorder`, {
+    axiosInstance.post(`${backendurl}/api/order/placeorder`, {
       paymentMethod: 'Cash on Delivery',
       deliveryAddress: 'User Address'
     })

@@ -31,13 +31,13 @@ const GetDish = () => {
                 }
                 
                 // Fetch Dish Details
-                const dishResponse = await axios.get(`${backendurl}/dish/getdish/${id}`, {
+                const dishResponse = await axios.get(`${backendurl}/api/dish/getdish/${id}`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 setDish(dishResponse.data.dish);
 
                 // Fetch Reviews for this Dish
-                const reviewsResponse = await axios.get(`${backendurl}/review/reviews/${id}`, {
+                const reviewsResponse = await axios.get(`${backendurl}/api/review/reviews/${id}`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 setReviews(reviewsResponse.data);
@@ -58,7 +58,7 @@ const GetDish = () => {
         try {
             const token = localStorage.getItem("token");
             const response = await axios.put(
-                `${backendurl}/review/updatereview/${currentReview._id}`, 
+                `${backendurl}/api/review/updatereview/${currentReview._id}`, 
                 {
                     reviewId: currentReview._id,
                     dishId: id,
@@ -93,7 +93,7 @@ const GetDish = () => {
     const handleDeleteReview = async (reviewId) => {
         try {
           const token = localStorage.getItem("token");
-          await axios.delete(`${backendurl}/review/deletereview/${reviewId}`, {
+          await axios.delete(`${backendurl}/api/review/deletereview/${reviewId}`, {
             headers: { Authorization: `Bearer ${token}` },
             data: { 
               dishId: id,  // Pass the dish ID 

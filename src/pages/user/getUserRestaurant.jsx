@@ -28,7 +28,7 @@ const RestaurantUserView = () => {
           return;
         }
         
-        const response = await axios.get(`${backendurl}/restaurant/userrestaurant/${id}`, {
+        const response = await axios.get(`${backendurl}/api/restaurant/userrestaurant/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

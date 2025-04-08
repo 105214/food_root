@@ -29,7 +29,7 @@ const RestaurantListing = () => {
       // Add a try-catch specifically for the API call
       try {
         const response = await axios.get(
-          `${backendurl}/restaurant/allrestaurants`,
+          `${backendurl}/api/restaurant/allrestaurants`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -64,48 +64,6 @@ const RestaurantListing = () => {
       setLoading(false);
     }
   };
-  // const fetchRestaurants = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const token = localStorage.getItem('userToken');
-      
-  //     if (!token) {
-  //      navigate('/');
-  //      return;
-  //     }
-      
-  //     const response = await axios.get(
-  //       `http://localhost:3001/api/restaurant/allrestaurants`,
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${token}`
-  //         }
-  //       }
-  //     );
-      
-  //     if (response.data.success) {
-  //       setRestaurants(response.data.data);
-  //     } else {
-  //       throw new Error(response.data.message || 'Failed to fetch restaurants');
-  //     }
-  //   } catch (err) {
-  //     console.error('Error fetching restaurants:', err);
-  //     setError(err.message || 'An error occurred while fetching restaurant data');
-
-  //       // Add this to see more details about the error
-  //       if (err.response) {
-  //         console.log('Error response data:', err.response.data);
-  //         console.log('Error response status:', err.response.status);
-  //         console.log('Error response headers:', err.response.headers);
-  //         setError(err.response.data.message || 'Authentication failed. Please login again.');
-  //       } else {
-  //         setError(err.message || 'An error occurred while fetching restaurant data');
-  //       }
-      
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   if (loading && restaurants.length === 0) {
     return (

@@ -13,7 +13,7 @@ const Order = () => {
 
   useEffect(() => {
     axios
-      .get(`${backendurl}/orders/getorders`)
+      .get(`${backendurl}/api/orders/getorders`)
       .then((response) => {
         setOrders(response.data);
       })

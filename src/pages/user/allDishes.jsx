@@ -25,7 +25,7 @@ const DishesPage = () => {
       }
     
       const response = await axios.post(
-        `${backendurl}/cart/addcart`,
+        `${backendurl}/api/cart/addcart`,
         {
           dishId: dish._id,
           quantity: 1,
@@ -60,7 +60,7 @@ const DishesPage = () => {
           return;
         }
         
-        const response = await axios.get(`${backendurl}/dish/alldishes`, {
+        const response = await axios.get(`${backendurl}/api/dish/alldishes`, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'

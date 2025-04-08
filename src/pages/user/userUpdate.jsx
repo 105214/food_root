@@ -35,7 +35,7 @@ const navigate=useNavigate()
       console.log("Using token:", token.substring(0, 15) + "...");
     
       try {
-        const response = await axios.get(`${backendurl}/user/profile`, {
+        const response = await axios.get(`${backendurl}/api/user/profile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         
@@ -103,7 +103,7 @@ const navigate=useNavigate()
       }
       
       const response = await axios.put(
-        `${backendurl}/user/profileupdate`, 
+        `${backendurl}/api/user/profileupdate`, 
         formData,
         {
           headers: { 

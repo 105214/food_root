@@ -35,7 +35,7 @@ const RestaurantMenuView = () => {
         }
         
         // Updated API endpoint for dishes that reference this restaurant
-        const response = await axios.get(`${backendurl}/restaurant/menu/${id}`, {
+        const response = await axios.get(`${backendurl}/api/restaurant/menu/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

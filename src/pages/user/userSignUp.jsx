@@ -56,7 +56,7 @@ const UserSignup = () => {
     }
 
     try {
-      await axios.post(`${backendurl}/user/signup`, formDataToSend, {
+      await axios.post(`${backendurl}/api/user/signup`, formDataToSend, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setMessage("Signup successful! Please login.");

@@ -20,7 +20,7 @@ const UpdateCart = () => {
     try {
       setIsLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get(`${backendurl}/cart/getcart`, {
+      const response = await axios.get(`${backendurl}/api/cart/getcart`, {
         headers: { Authorization: `Bearer ${token}` },
       });
   

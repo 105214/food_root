@@ -17,7 +17,7 @@ const GetCart = () => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const response = await axios.get(`${backendurl}/cart/getcart`, {
+        const response = await axios.get(`${backendurl}/api/cart/getcart`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setCart(response.data.cart);
