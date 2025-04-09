@@ -15,7 +15,7 @@ const AddToCart = () => {
   const navigate = useNavigate();
 
   const axiosInstance = axios.create({
-    baseURL: "http://localhost:3001/api"
+    baseURL:backendurl
   });
 
   axiosInstance.interceptors.request.use(
@@ -52,10 +52,11 @@ const AddToCart = () => {
       if (response.data?.cart?.items) {
         const processedCart = response.data.cart.items.map(item => ({
           ...item,
-          dishId: item.dishId || null,
-          quantity: item.quantity || 0,
+          name: item.dishId?.name || 'Unnamed Item', // extract name
           uniqueKey: item.dishId?._id || Math.random().toString()
+          // Don't modify the dishId structure here
         }));
+        
         setCart(processedCart);
         if (processedCart.length === 0) {
           setMessage("Your cart is empty");
@@ -70,12 +71,31 @@ const AddToCart = () => {
       setLoading(false);
     }
   };
+        
+
+
+
+  //       setCart(processedCart);
+  //       if (processedCart.length === 0) {
+  //         setMessage("Your cart is empty");
+  //       }
+  //     } else {
+  //       setError("Invalid cart data structure");
+  //       setMessage("No items in cart");
+  //     }
+  //   } catch (err) {
+  //     setError(err.response?.data?.message || "Failed to load cart");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   const handleRemoveCart = async (dishId) => {
     try {
       const response = await axiosInstance.delete(`${backendurl}/api/cart/deletecart/${dishId}`);
       if (response.data.success) {
-        setCart(prevCart => prevCart.filter(item => item.dishId._id !== dishId));
+       // This assumes dishId is an object with an _id property
+setCart(prevCart => prevCart.filter(item => item.dishId._id !== dishId));
         setMessage("Item removed from cart successfully");
         fetchCart();
       } else {
@@ -92,9 +112,12 @@ const AddToCart = () => {
       return;
     }
     try {
-      const updatedCart = cart.map(item =>
-        item.dishId === dishId ? { ...item, quantity: newQuantity } : item
-      );
+      // This assumes dishId is a string
+const updatedCart = cart.map(item =>
+  item.dishId === dishId ? { ...item, quantity: newQuantity } : item
+);
+      
+      
       setCart(updatedCart);
       const response = await axiosInstance.put(`${backendurl}/api/cart/updatecart/${dishId}`, {
         quantity: newQuantity

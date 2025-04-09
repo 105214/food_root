@@ -15,12 +15,25 @@ const DishesPage = () => {
   const navigate = useNavigate();
 
   // Centralized add to cart handler
+
+  
+  
   const handleAddToCart = async (dish) => {
     try {
       const token = localStorage.getItem("token");
-      
+  
       if (!token) {
         setError("Please log in to add items to the cart.");
+        return;
+      }
+      console.log("Adding to cart:", {
+        dishId: dish._id,
+        price: dish.price,
+        quantity: 1,
+      });
+      if (!dish._id || !dish.price) {
+        setError("Dish data is incomplete. Please refresh and try again.");
+        console.warn("Invalid dish data:", dish);
         return;
       }
   
@@ -29,12 +42,12 @@ const DishesPage = () => {
         {
           dishId: dish._id,
           quantity: 1,
-          price: dish.price  // ✅ ADD THIS LINE
+          price: dish.price
         },
         {
-          headers: { 
+          headers: {
             Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
           },
         }
       );
@@ -49,6 +62,8 @@ const DishesPage = () => {
       setError(error.response?.data?.message || "Error adding item to cart.");
     }
   };
+  
+  
   
   // const handleAddToCart = async (dish) => {
   //   try {
@@ -105,14 +120,15 @@ const DishesPage = () => {
         const fetchedDishes = response.data.dishes || [];
         
         const validDishes = fetchedDishes.map(dish => ({
-          _id: dish._id || `dish-${Math.random().toString(36).substr(2, 9)}`,
+          _id: dish._id || null,  // <-- be strict
           name: dish.name || 'Unnamed Dish',
-          price: dish.price || 0,
+          price: dish.price ?? null,  // use `null` instead of 0 so it's clear
           imageUrl: dish.imageUrl || '/placeholder-dish.jpg',
           description: dish.description || 'No description available',
           category: dish.category || 'Uncategorized',
           restaurantName: dish.restaurantName || 'Unknown Restaurant'
         }));
+        
 
         // Set user info from response
         if (response.data.user) {
