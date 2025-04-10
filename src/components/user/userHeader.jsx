@@ -20,7 +20,7 @@ function UserHeader() {
         
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto flex-column flex-lg-row">
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/home">Home</Nav.Link>
             <Nav.Link as={Link} to="/restaurants">Restaurants</Nav.Link>
             <Nav.Link as={Link} to="/dishes">Dishes</Nav.Link>
             <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
