@@ -38,7 +38,7 @@ const AdminSignup = () => {
   formDataToSend.append("profilePic", formData.image);
   }
     try {
-      const response = await axios.post(`${backendurl}/admin/addadmin`, formDataToSend,
+      const response = await axios.post(`${backendurl}/api/admin/addadmin`, formDataToSend,
         {
             headers: {
             'Content-Type': 'multipart/form-data',

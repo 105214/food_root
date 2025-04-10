@@ -27,7 +27,7 @@ const AdminDelete = () => {
       }
   
       try {
-        const response = await axios.get(`${backendurl}/admin/adminprofile`, {
+        const response = await axios.get(`${backendurl}/api/admin/adminprofile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log("Fetched Admin Data:", response.data)
@@ -56,7 +56,7 @@ const AdminDelete = () => {
     }
   
     try {
-      await axios.delete(`${backendurl}/admin/deleteadmin`, {
+      await axios.delete(`${backendurl}/api/admin/deleteadmin`, {
         headers: { Authorization: `Bearer ${token}` }, // Include the token
         data: { _id: admin._id },
       });

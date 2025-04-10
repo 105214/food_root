@@ -15,7 +15,7 @@ const OwnerLogout = () => {
     try {
       const token = localStorage.getItem("token"); // Get token from localStorage
       await axios.put(
-        `${backendurl}/owner/ownerlogout`,
+        `${backendurl}/api/owner/ownerlogout`,
         {},
         {
           withCredentials: true,

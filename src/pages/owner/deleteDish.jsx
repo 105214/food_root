@@ -25,7 +25,7 @@ const DeleteDish = () => {
           return;
         }
 
-        const response = await axios.get(`${backendurl}/dish/viewdish/${id}`, {
+        const response = await axios.get(`${backendurl}/api/dish/viewdish/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setDish(response.data.dish);
@@ -50,7 +50,7 @@ const DeleteDish = () => {
       }
 
       // Updated URL to match your backend route
-      await axios.delete(`${backendurl}/dish/deletedish/${id}`, {
+      await axios.delete(`${backendurl}/api/dish/deletedish/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true
       });

@@ -89,7 +89,7 @@ useEffect(() => {
       
       // Use the new endpoint for single restaurant
       const response = await axios.get(
-        `${backendurl}/restaurant/restaurantview/${id}`, 
+        `${backendurl}/api/restaurant/restaurantview/${id}`, 
         {
           headers: { Authorization: `Bearer ${token}` },
           signal: controller.signal
@@ -205,7 +205,7 @@ useEffect(() => {
       const timeoutId = setTimeout(() => controller.abort(), 15000);
 
       const response = await axios.put(
-        `${backendurl}/restaurant/updaterestaurant/${id}`,
+        `${backendurl}/api/restaurant/updaterestaurant/${id}`,
         formDataToSend,
         {
           headers: {

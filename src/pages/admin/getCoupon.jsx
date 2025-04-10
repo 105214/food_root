@@ -37,7 +37,7 @@ const CouponPage = () => {
         return;
       }
      
-      const response = await axios.get(`${backendurl}/coupon/getallcoupon`, {
+      const response = await axios.get(`${backendurl}/api/coupon/getallcoupon`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -71,7 +71,7 @@ const CouponPage = () => {
         return;
       }
 
-      await axios.delete(`${backendurl}/coupon/deletecoupon/${couponToDelete._id}`, {
+      await axios.delete(`${backendurl}/api/coupon/deletecoupon/${couponToDelete._id}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

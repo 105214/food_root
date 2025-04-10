@@ -35,7 +35,7 @@ const DeleteRestaurant = () => {
     
     try {
       const response = await axios.delete(
-        `${backendurl}/restaurant/deleterestaurant/${id}`,
+        `${backendurl}/api/restaurant/deleterestaurant/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`

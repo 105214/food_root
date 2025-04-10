@@ -28,7 +28,7 @@ const UpdateDish = () => {
             try {
                 setLoading(true);
                 const token = localStorage.getItem("token");
-                const response = await axios.get(`${backendurl}/dish/getdish/${id}`, {
+                const response = await axios.get(`${backendurl}/api/dish/getdish/${id}`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 
@@ -106,7 +106,7 @@ const UpdateDish = () => {
           
           // Add timeout and increase it
           const response = await axios.put(
-            `${backendurl}/dish/updatedish/${id}`,
+            `${backendurl}/api/dish/updatedish/${id}`,
             formData,
             { 
               headers: { 

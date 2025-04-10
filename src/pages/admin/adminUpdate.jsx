@@ -22,7 +22,7 @@ const AdminUpdate = () => {
           return;
         }
         
-        const response = await axios.get(`${backendurl}/admin/adminprofile`, {
+        const response = await axios.get(`${backendurl}/api/admin/adminprofile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         
@@ -64,7 +64,7 @@ const AdminUpdate = () => {
         console.log(pair[0] + ': ' + pair[1]);
       }
       
-      const response = await axios.put(`${backendurl}/admin/updateadmin`, formDataToSend, {
+      const response = await axios.put(`${backendurl}/api/admin/updateadmin`, formDataToSend, {
         headers: { Authorization: `Bearer ${token}`,
         "Content-Type": "multipart/form-data",
       },

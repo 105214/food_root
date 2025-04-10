@@ -22,7 +22,7 @@ const OwnerDishes = () => {
       const token = localStorage.getItem('token');
       console.log('Using token:', token ? 'Token exists' : 'No token');
       
-      const response = await axios.get(`${backendurl}/dish/dishes`, {
+      const response = await axios.get(`${backendurl}/api/dish/dishes`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

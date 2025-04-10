@@ -168,6 +168,7 @@ const router=createBrowserRouter([
       path:"payment",
       element:<h1>Payment</h1>
      },
+     
      {
       path:"payment/success",
       element:<PaymentSuccess/>
@@ -175,7 +176,8 @@ const router=createBrowserRouter([
      {
       path:"payment/cancel",
       element:<h1>payment failure</h1>
-     }, 
+     },
+   
      {
       path:"payment/transaction-details",
       element:<TransactionHistory/>

@@ -33,7 +33,7 @@ const AdminProfile = () => {
               Authorization: `Bearer ${token}`
             }); // Check headers
       
-            const response = await axios.get(`${backendurl}/admin/adminprofile`, {
+            const response = await axios.get(`${backendurl}/api/admin/adminprofile`, {
               headers: {
                 Authorization: `Bearer ${token}`,
               },

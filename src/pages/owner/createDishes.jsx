@@ -46,7 +46,7 @@ function CreateDish() {
         }
 const ownerId=localStorage.getItem("ownerId")
         const response = await axios.get(
-          `${backendurl}/restaurant/restaurants/${ownerId}`, 
+          `${backendurl}/api/restaurant/restaurants/${ownerId}`, 
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -86,7 +86,7 @@ const ownerId=localStorage.getItem("ownerId")
         }
 
         const response = await axios.get(
-          `${backendurl}/restaurant/restaurantview/${selectedRestaurantId}`, 
+          `${backendurl}/api/restaurant/restaurantview/${selectedRestaurantId}`, 
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -158,7 +158,7 @@ const ownerId=localStorage.getItem("ownerId")
       }
 
       const response = await axios.post(
-        `${backendurl}/dish/adddish`,
+        `${backendurl}/api/dish/adddish`,
         formData,
         {
           headers: {

@@ -58,7 +58,7 @@ function CreateRestaurant() {
     }
   
     try {
-      const response = await axios.post(`${backendurl}/restaurant/addrestaurant`, formData, {
+      const response = await axios.post(`${backendurl}/api/restaurant/addrestaurant`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": `Bearer ${token}`

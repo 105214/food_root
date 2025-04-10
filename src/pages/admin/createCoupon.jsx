@@ -26,7 +26,7 @@ const CouponForm = () => {
       console.log("Token being sent:", token); // Debugging step
   
       const response = await axios.post(
-        `${backendurl}/coupon/createcoupon`,
+        `${backendurl}/api/coupon/createcoupon`,
         { code, discount, expiryDate },
         {
           headers: { Authorization: `Bearer ${token}` },

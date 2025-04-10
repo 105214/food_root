@@ -21,7 +21,7 @@ const OwnerLogin = () => {
   
     try {
       const response = await axios.put(
-        `${backendurl}/owner/ownerlogin`,
+        `${backendurl}/api/owner/ownerlogin`,
         credentials
       );
   

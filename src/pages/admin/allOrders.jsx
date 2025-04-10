@@ -15,7 +15,7 @@ const AdminOrder = () => {
     const fetchOrders = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(`${backendurl}/admin/allorders`, {
+        const response = await axios.get(`${backendurl}/api/admin/allorders`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOrders(response.data.orders);

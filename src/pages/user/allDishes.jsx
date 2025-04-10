@@ -26,28 +26,29 @@ const DishesPage = () => {
         setError("Please log in to add items to the cart.");
         return;
       }
-      console.log("Adding to cart:", {
-        dishId: dish._id,
-        price: dish.price,
-        quantity: 1,
-      });
-      if (!dish._id || !dish.price) {
-        setError("Dish data is incomplete. Please refresh and try again.");
-        console.warn("Invalid dish data:", dish);
+  
+      // Validate the dish object
+      if (!dish || !dish._id || dish.price === undefined) {
+        setError("Invalid dish data. Please refresh and try again.");
         return;
       }
   
+      const payload = {
+        dishId: dish._id.toString(),
+        price: parseFloat(dish.price),
+        quantity: 1,
+      };
+  
+      console.log("Raw dish object:", dish);
+      console.log("Payload:", payload);
+  
       const response = await axios.post(
         `${backendurl}/api/cart/addcart`,
-        {
-          dishId: dish._id,
-          quantity: 1,
-          price: dish.price
-        },
+        payload,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
         }
       );
@@ -58,46 +59,21 @@ const DishesPage = () => {
         setError(response.data.message || "Failed to add item to cart.");
       }
     } catch (error) {
-      console.error("Error adding to cart:", error.response?.data || error);
+      console.error("Error adding to cart:", error);
       setError(error.response?.data?.message || "Error adding item to cart.");
     }
   };
-  
-  
-  
-  // const handleAddToCart = async (dish) => {
-  //   try {
-  //     const token = localStorage.getItem("token");
-     
-  //     if (!token) {
-  //       setError("Please log in to add items to the cart.");
-  //       return;
-  //     }
-    
-  //     const response = await axios.post(
-  //       `${backendurl}/api/cart/addcart`,
-  //       {
-  //         dishId: dish._id,
-  //         quantity: 1,
-  //       },
-  //       {
-  //         headers: { 
-  //           Authorization: `Bearer ${token}`,
-  //           'Content-Type': 'application/json'
-  //         },
-  //       }
-  //     );
-    
-  //     if (response.data.success) {
-  //       navigate("/addcart");
-  //     } else {
-  //       setError(response.data.message || "Failed to add item to cart.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error adding to cart:", error.response?.data || error);
-  //     setError(error.response?.data?.message || "Error adding item to cart.");
-  //   }
-  // };
+
+
+
+
+
+
+
+
+
+
+
 
   useEffect(() => {
     const fetchDishes = async () => {

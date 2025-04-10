@@ -27,7 +27,7 @@ const navigate=useNavigate()
   
     try {
       // Log the URL to confirm what you're requesting
-      const url = `${backendurl}/restaurant/restaurants/${ownerId}`;
+      const url = `${backendurl}/api/restaurant/restaurants/${ownerId}`;
       console.log("Requesting URL:", url);
       
       const response = await axios.get(

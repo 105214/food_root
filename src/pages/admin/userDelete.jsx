@@ -22,7 +22,7 @@ const DeleteUser = () => {
       try {
         const token = localStorage.getItem("token");
 
-        const response = await axios.delete(`${backendurl}/admin/deleteuser/${id}`, {
+        const response = await axios.delete(`${backendurl}/api/admin/deleteuser/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
 
