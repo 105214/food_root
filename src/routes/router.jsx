@@ -164,10 +164,7 @@ const router=createBrowserRouter([
       path:"applycoupon",
       element:<ApplyCoupon/>
      },
-     {
-      path:"payment",
-      element:<h1>Payment</h1>
-     },
+    
      
      {
       path:"payment/success",

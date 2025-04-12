@@ -12,7 +12,13 @@ body, html {
     background-color: #40ec88;
    
 }
-
+i{
+    padding: 10px;
+}
+.owner{
+    color: #fff;
+    text-decoration: none;
+}
 /* .footer {
     display: flex;
     width: 100%;

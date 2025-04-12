@@ -105,32 +105,82 @@ setCart(prevCart => prevCart.filter(item => item.dishId._id !== dishId));
       setError("Failed to remove item from cart");
     }
   };
-
   const handleUpdateQuantity = async (dishId, newQuantity) => {
     if (!dishId) {
       setError("Invalid dish ID, cannot update quantity.");
       return;
     }
+    
     try {
-      // This assumes dishId is a string
-const updatedCart = cart.map(item =>
-  item.dishId === dishId ? { ...item, quantity: newQuantity } : item
-);
+      // Find the current item in cart to get its price
+      const currentItem = cart.find(item => {
+        // Check if dishId is an object with _id or just a string
+        const itemDishId = item.dishId && item.dishId._id ? item.dishId._id : item.dishId;
+        const targetDishId = typeof dishId === 'object' ? dishId._id : dishId;
+        
+        return String(itemDishId) === String(targetDishId);
+      });
       
+      if (!currentItem) {
+        setError("Item not found in cart");
+        return;
+      }
+      
+      // Update UI optimistically
+      const updatedCart = cart.map(item => {
+        const itemDishId = item.dishId && item.dishId._id ? item.dishId._id : item.dishId;
+        const targetDishId = typeof dishId === 'object' ? dishId._id : dishId;
+        
+        return String(itemDishId) === String(targetDishId) ? { ...item, quantity: newQuantity } : item;
+      });
       
       setCart(updatedCart);
-      const response = await axiosInstance.put(`${backendurl}/api/cart/updatecart/${dishId}`, {
-        quantity: newQuantity
+      
+      // Send all required parameters to backend
+      const dishIdValue = typeof dishId === 'object' ? dishId._id : dishId;
+      const response = await axiosInstance.put(`${backendurl}/api/cart/updatecart`, {
+        dishId: dishIdValue,
+        quantity: newQuantity,
+        price: currentItem.price
       });
+      
       if (!response.data.success) {
-        setCart(cart);
+        // Revert to previous state on error
+        fetchCart();
         setError("Failed to update cart quantity");
       }
     } catch (error) {
-      setCart(cart);
+      // Revert and show error
+      fetchCart();
       setError("Failed to update cart quantity");
+      console.error("Update error:", error.response?.data || error.message);
     }
   };
+//   const handleUpdateQuantity = async (dishId, newQuantity) => {
+//     if (!dishId) {
+//       setError("Invalid dish ID, cannot update quantity.");
+//       return;
+//     }
+//     try {
+//       // This assumes dishId is a string
+// const updatedCart = cart.map(item =>
+//   item.dishId === dishId ? { ...item, quantity: newQuantity } : item
+// );
+      
+      
+//       setCart(updatedCart);
+//       const response = await axiosInstance.put(`${backendurl}/api/cart/updatecart`, {
+//         quantity: newQuantity
+//       });
+//       if (!response.data.success) {
+//         setCart(cart);
+//         setError("Failed to update cart quantity");
+//       }
+//     } catch (error) {
+//       setCart(cart);
+//       setError("Failed to update cart quantity");
+//     }
+//   };
 
   const calculateTotalPrice = () => {
     return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
