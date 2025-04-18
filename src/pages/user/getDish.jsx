@@ -157,13 +157,13 @@ const GetDish = () => {
                         <strong>Average Rating:</strong> {dish.averageRating ? `${dish.averageRating}/5` : "No ratings yet"}
                     </Card.Text>
                     <div className="d-flex gap-2">
-                        <Button
+                        {/* <Button
                             variant="success"
                             onClick={handleBuy}
                             disabled={!dish.availability}
                         >
                             Buy Now
-                        </Button>
+                        </Button> */}
                         <Button
                             variant="primary"
                             onClick={() => navigate(`/addreview/${dish._id}`)}

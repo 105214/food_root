@@ -181,7 +181,7 @@ const makePayment = async (order) => {
         <Container className='userbox'>
             <h2 className="my-4">My Orders</h2>
             {message && <Alert variant="info" onClose={() => setMessage(null)} dismissible>{message}</Alert>}
-            <Button variant="primary" onClick={() => navigate('/cart')} className="mb-3">Go to Cart</Button>
+            {/* <Button variant="primary" onClick={() => navigate('/getcart')} className="mb-3">Go to Cart</Button> */}
             
             {isLoading ? (
                 <div className="text-center py-4">

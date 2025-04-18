@@ -59,6 +59,7 @@ import ProtectedAdminRoutes from "../utils/ProtectedAdminRoutes";
 import UserOrders from "../pages/user/userOrder";
 import PaymentSuccess from "../pages/user/paymentSuccess";
 import TransactionHistory from "../pages/user/transactionHistory";
+import CancelPayment from "../pages/user/paymentFailure";
 
 
 
@@ -172,7 +173,7 @@ const router=createBrowserRouter([
      },
      {
       path:"payment/cancel",
-      element:<h1>payment failure</h1>
+      element:<CancelPayment/>
      },
    
      {
