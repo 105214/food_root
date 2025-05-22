@@ -158,7 +158,7 @@ const makePayment = async (order) => {
             setIsLoading(false);
         }
     };
-
+   
     // Helper function to display order items for debugging
     const renderOrderItems = (items) => {
         if (!items || !Array.isArray(items) || items.length === 0) {
@@ -182,7 +182,7 @@ const makePayment = async (order) => {
             <h2 className="my-4">My Orders</h2>
             {message && <Alert variant="info" onClose={() => setMessage(null)} dismissible>{message}</Alert>}
             {/* <Button variant="primary" onClick={() => navigate('/getcart')} className="mb-3">Go to Cart</Button> */}
-            
+         
             {isLoading ? (
                 <div className="text-center py-4">
                     <div className="spinner-border" role="status">

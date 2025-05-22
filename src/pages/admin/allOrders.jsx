@@ -50,7 +50,9 @@ const AdminOrder = () => {
               <Card.Body>
                 <Card.Title>Order ID: {order._id}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
-                  User: {order.user.name} ({order.user.email})
+                  {/* User: {order.user.name} ({order.user.email}) */}
+                  User: {order.user?.name || "N/A"} ({order.user?.email || "N/A"})
+
                 </Card.Subtitle>
 
                 <ul className="order-items">
