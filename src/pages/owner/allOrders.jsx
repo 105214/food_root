@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./allorders.css";
 const backendurl=import.meta.env.VITE_BACKEND_URL
 
-const AdminOrder = () => {
+const OwnerOrder = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,7 +15,7 @@ const AdminOrder = () => {
     const fetchOrders = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(`${backendurl}/api/admin/allorders`, {
+        const response = await axios.get(`${backendurl}/api/owner/allorders`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOrders(response.data.orders);
@@ -30,7 +30,7 @@ const AdminOrder = () => {
   }, []);
 
   const navigateToOrderStatus = (orderId) => {
-    navigate(`/admin/orderstatus?orderId=${orderId}`);
+    navigate(`/owner/orderstatus?orderId=${orderId}`);
   };
 
   return (
@@ -109,7 +109,7 @@ const getStatusBadgeVariant = (status) => {
   }
 };
 
-export default AdminOrder;
+export default OwnerOrder;
 
 
 

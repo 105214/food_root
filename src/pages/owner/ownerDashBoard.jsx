@@ -18,7 +18,7 @@ const OwnerDashboard = () => {
             <p className="welcome-subtitle">Manage your restaurant business efficiently</p>
           </div>
           <Row className="dashboard-cards">
-            <Col md={6} className="mb-4">
+            <Col md={4} className="mb-4">
               <Card className="dashboard-card">
                 <div className="card-icon">
                   <i className="fas fa-plus-circle"></i>
@@ -30,7 +30,7 @@ const OwnerDashboard = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={6} className="mb-4">
+            <Col md={4} className="mb-4">
               <Card className="dashboard-card">
                 <div className="card-icon">
                   <i className="fas fa-list"></i>
@@ -39,6 +39,20 @@ const OwnerDashboard = () => {
                   <Card.Title>View Restaurant</Card.Title>
                   <Card.Text>See and manage your existing restaurants</Card.Text>
                   <Link to={`/owner/restaurants/${ownerId}`} className="btn btn-primary dashboard-btn">View Details</Link>
+                </Card.Body>
+              </Card>
+            </Col>
+
+
+            <Col md={4} className="mb-4">
+              <Card className="dashboard-card">
+                <div className="card-icon">
+                  <i className="fas fa-plus-circle"></i>
+                </div>
+                <Card.Body>
+                  <Card.Title>View Orders</Card.Title>
+                  <Card.Text>manage your orders</Card.Text>
+                  <Link to="/owner/allorders" className="btn btn-primary dashboard-btn">View Orders</Link>
                 </Card.Body>
               </Card>
             </Col>

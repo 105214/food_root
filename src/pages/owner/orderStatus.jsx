@@ -39,7 +39,7 @@ const OrderStatusPage = () => {
       
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(`${backendurl}/api/admin/order/${orderId}`, {
+        const response = await axios.get(`${backendurl}/api/owner/order/${orderId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         
@@ -67,7 +67,7 @@ const handleStatusUpdate = async (e) => {
   try {
     const token = localStorage.getItem("token");
     await axios.post(
-      `${backendurl}/api/admin/orderstatus`, 
+      `${backendurl}/api/owner/orderstatus`, 
       { orderId, status: selectedStatus },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -101,7 +101,7 @@ const handleStatusUpdate = async (e) => {
   };
   
   const handleGoBack = () => {
-    navigate("/admin/allorders");
+    navigate("/owner/allorders");
   };
   
   if (loading) {

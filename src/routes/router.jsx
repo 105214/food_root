@@ -46,8 +46,8 @@ import OwnerSignup from "../pages/owner/Signup"
 import OwnerLogout from "../pages/owner/ownerlogout";
 import AdminLayout from "../layout/adminLayout";
 import AdminDashboard from "../pages/admin/adminDashBoard";
-import AdminOrder from "../pages/admin/allOrders";
-import OrderStatusPage from "../pages/admin/orderStatus";
+import AdminOrder from "../pages/owner/allOrders";
+import OrderStatusPage from "../pages/owner/orderStatus";
 import AllUsers from "../pages/admin/allUsers";
 import DeleteUser from "../pages/admin/userDelete";
 import RestaurantUserView from "../pages/user/getUserRestaurant";
@@ -60,6 +60,7 @@ import UserOrders from "../pages/user/userOrder";
 import PaymentSuccess from "../pages/user/paymentSuccess";
 import TransactionHistory from "../pages/user/transactionHistory";
 import CancelPayment from "../pages/user/paymentFailure";
+import OwnerOrder from "../pages/owner/allOrders";
 
 
 
@@ -244,6 +245,14 @@ const router=createBrowserRouter([
             element:<UpdateDish/>
           },
           {
+            path:"allorders",
+            element:<OwnerOrder/>
+          },
+          {
+            path:"orderstatus",
+            element:<OrderStatusPage/>
+          },
+          {
             path:"deletedish/:id",
             element:<DeleteDish/>
           },
@@ -292,14 +301,7 @@ const router=createBrowserRouter([
           {
             element:<ProtectedAdminRoutes/>,
             children:[
-              {
-                path:"allorders",
-                element:<AdminOrder/>
-              },
-              {
-                path:"orderstatus",
-                element:<OrderStatusPage/>
-              },
+           
               {
                 path:"allusers",
                 element:<AllUsers/>
